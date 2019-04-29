@@ -21,5 +21,12 @@
 </head>
 <body>
   <app-root></app-root>
+  <script>
+    $( document ).ready(function() {
+      $(window).scroll(function(){
+        $('nav').toggleClass('scrolled', $(this).scrollTop() > 75);
+      });
+    });
+  </script>
 </body>
 </html>
