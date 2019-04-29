@@ -62,6 +62,9 @@
   @media screen and (min-width: 768px) {
   
     nav {
+      padding: 1.5rem 0;
+    }
+    nav.scrolled {
       padding: 1rem 0;
     }
     input[type=search]{
