@@ -15,19 +15,19 @@ export class MockDataService implements IDataService {
      productCategory: [{categoryId: 5, category: null}, {categoryId: 6, category: null}]
     },
     {
-     id: 2, name: 'The Dark Knight', description: 'abcd', price: 199,
+     id: 2, name: 'Ben Hur', description: 'abcd', price: 199,
      imageUrl: 'https://i.imgur.com/DpCHP0h.jpg',
      year: 2008, added: '2016-01-05T00:00:00',
      productCategory: [{categoryId: 5, category: null}, {categoryId: 6, category: null}]
     },
     {
-     id: 3, name: 'The Dark Knight', description: 'abcd', price: 199,
+     id: 3, name: 'Avengers Endgame', description: 'abcd', price: 199,
      imageUrl: 'https://i.imgur.com/DpCHP0h.jpg',
      year: 2008, added: '2016-01-05T00:00:00',
      productCategory: [{categoryId: 5, category: null}, {categoryId: 6, category: null}]
     },
     {
-     id: 4, name: 'The Dark Knight', description: 'abcd', price: 199,
+     id: 4, name: 'Star Wars', description: 'abcd', price: 199,
      imageUrl: 'https://i.imgur.com/DpCHP0h.jpg',
      year: 2008, added: '2016-01-05T00:00:00',
      productCategory: [{categoryId: 5, category: null}, {categoryId: 6, category: null}]
