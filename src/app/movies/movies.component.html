@@ -1,5 +1,7 @@
+<section id="movie-list" class="row">
 <app-display-movie
  *ngFor="let movie of movies"
-[movie]="movie">
+[movie]="movie"
+class="col-6 col-md-3 d-flex align-items-stretch">
 </app-display-movie> 
-
+</section>

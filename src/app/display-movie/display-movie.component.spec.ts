@@ -1,8 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DisplayMovieComponent } from './display-movie.component';
 import { MoviesComponent } from '../movies/movies.component';
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { IMovie } from '../interfaces/IMovie';
 
 describe('DisplayMovieComponent', () => {
@@ -25,7 +24,6 @@ describe('DisplayMovieComponent', () => {
   it('should create', () => {
     expect(testHostComponent).toBeTruthy();
   });
-  
 
   @Component({
     selector: `host-component`,
