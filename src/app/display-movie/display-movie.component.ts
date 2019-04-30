@@ -9,9 +9,10 @@ import { IMovie } from '../interfaces/IMovie';
 export class DisplayMovieComponent implements OnInit {
   @Input() movie: IMovie;
 
-  constructor() { }
+   constructor() { }
 
-  ngOnInit() {
+   ngOnInit() {
   }
+
 
 }
