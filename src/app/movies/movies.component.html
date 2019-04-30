@@ -1,3 +1,4 @@
-<p *ngFor="let movie of movies">
-  {{movie.id}}: {{movie.name}}
-</p>
+<app-display-movie
+ *ngFor="let movie of movies"
+[movie]="movie">
+</app-display-movie>
