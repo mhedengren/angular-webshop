@@ -12,7 +12,7 @@ export class MoviesComponent implements OnInit {
 
   movies: IMovie[];
 
-  constructor(private dataservice: MockDataService) { }
+  constructor(private dataservice: DataService) { }
 
   ngOnInit() {
     this.dataservice.getData().subscribe(data => {

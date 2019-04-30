@@ -7,7 +7,6 @@ import { IMovie } from '../interfaces/IMovie';
   styleUrls: ['./display-movie.component.scss']
 })
 export class DisplayMovieComponent implements OnInit {
-
   @Input() movie: IMovie;
 
   constructor() { }
