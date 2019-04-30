@@ -2,10 +2,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MoviesComponent } from './movies.component';
 import { MockDataService } from '../services/mock-data.service';
-import { HttpClientModule } from '@angular/common/http';
 import { DataService } from '../services/data.service';
 
-describe('ProductsComponent', () => {
+describe('MoviesComponent', () => {
   let component: MoviesComponent;
   let fixture: ComponentFixture<MoviesComponent>;
 
