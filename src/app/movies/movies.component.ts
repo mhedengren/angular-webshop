@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { IMovie } from '../interfaces/IMovie';
+import { MockDataService } from '../services/mock-data.service';
 
 @Component({
   selector: 'app-movies',
@@ -8,11 +10,13 @@ import { DataService } from '../services/data.service';
 })
 export class MoviesComponent implements OnInit {
 
-  constructor(private dataservice: DataService) { }
+  movies: IMovie[];
+
+  constructor(private dataservice: MockDataService) { }
 
   ngOnInit() {
     this.dataservice.getData().subscribe(data => {
-      console.log(data);
+      this.movies = data;
     });
   }
 
