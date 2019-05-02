@@ -5,11 +5,13 @@ import { MoviesComponent } from './movies/movies.component';
 import { HomeComponent } from './home/home.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartComponent } from './cart/cart.component';
+import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
   {path: 'movies', component: MoviesComponent},
   {path: 'checkout', component: CheckoutComponent},
   {path: 'cart', component: CartComponent},
+  {path: 'details/:id', component: DetailsComponent},
   {path: '', component: HomeComponent},
   {path: '**', component: NotfoundComponent}
   ];

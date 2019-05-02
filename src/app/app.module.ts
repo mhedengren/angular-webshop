@@ -11,6 +11,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartComponent } from './cart/cart.component';
 import { DisplayMovieComponent } from './display-movie/display-movie.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DisplayMovieComponent } from './display-movie/display-movie.component';
     NotfoundComponent,
     CheckoutComponent,
     CartComponent,
-    DisplayMovieComponent
+    DisplayMovieComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
