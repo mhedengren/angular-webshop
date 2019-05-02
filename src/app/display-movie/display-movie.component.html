@@ -1,8 +1,13 @@
 <div class="card">
-    <img class="card-img-top" src="{{movie.imageUrl}}" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title">{{movie.name}}</h5>
-        <p class="card-text">{{movie.price}} ;-</p>
-        <a href="#" class="btn btn-primary">Add to cart</a>
-    </div>
+    <a [routerLink]="['/details', movie.id]" routerLinkActive=”active”>
+        <img class="card-img-top" src="{{movie.imageUrl}}" alt="Card image cap">
+    </a>
+        <div class="card-body">
+            <h5 class="card-title">{{movie.name}}</h5>
+            <p class="card-text">{{movie.price}} ;-</p>
+            <a href="#" class="btn btn-primary">Add to cart</a>
+        </div>
+   
 </div>
+
+ 

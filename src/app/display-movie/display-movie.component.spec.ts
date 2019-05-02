@@ -3,6 +3,7 @@ import { DisplayMovieComponent } from './display-movie.component';
 import { MoviesComponent } from '../movies/movies.component';
 import { Component } from '@angular/core';
 import { IMovie } from '../interfaces/IMovie';
+import { RouterModule } from '@angular/router';
 
 describe('DisplayMovieComponent', () => {
   let testHostComponent: TestHostComponent;
@@ -10,7 +11,8 @@ describe('DisplayMovieComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DisplayMovieComponent, MoviesComponent, TestHostComponent ]
+      declarations: [ DisplayMovieComponent, MoviesComponent, TestHostComponent ],
+      imports: [RouterModule.forRoot([])]
     })
     .compileComponents();
   }));
