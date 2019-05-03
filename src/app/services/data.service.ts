@@ -12,5 +12,8 @@ export class DataService {
 
   getData(): Observable<IMovie[]> {
   return this.httpClient.get<IMovie[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/products');
-   }
+  }
+  getMovie(id): Observable<IMovie> {
+  return this.httpClient.get<IMovie>('https://medieinstitutet-wie-products.azurewebsites.net/api/products/' + id);
+  }
 }

@@ -24,4 +24,9 @@ describe('DetailsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should contain 1 movie', () => {
+    expect(component.movie.length).toBe(1);
+  });
+
 });

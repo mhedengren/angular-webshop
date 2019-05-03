@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../services/data.service';
+import { IMovie } from '../interfaces/IMovie';
 
 @Component({
   selector: 'app-details',
@@ -8,15 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute){
-    this.route.params.subscribe(myParams => {
+  movie: IMovie;
 
-      console.log(this.route);
-          // let id = myParams['id']
-    });
+  constructor(private route: ActivatedRoute, private dataservice: DataService) {
+
   }
 
   ngOnInit() {
+    this.route.params.subscribe(myParams => {
+      const id = myParams.id;
+
+      this.dataservice.getMovie(id).subscribe(data => {
+        this.movie = data;
+        console.log(data);
+      });
+  });
+
   }
 
 }

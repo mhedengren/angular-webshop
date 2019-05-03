@@ -7,6 +7,15 @@ import { IMovie } from '../interfaces/IMovie';
   providedIn: 'root'
 })
 export class MockDataService implements IDataService {
+
+
+  movie: IMovie = {
+    id: 1, name: 'The Dark Knight', description: 'abcd', price: 199,
+    imageUrl: 'https://i.imgur.com/DpCHP0h.jpg',
+    year: 2008, added: '2016-01-05T00:00:00',
+    productCategory: [{categoryId: 5, category: null}, {categoryId: 6, category: null}]
+  };
+
   movies: IMovie[] = [
     {
      id: 1, name: 'The Dark Knight', description: 'abcd', price: 199,
@@ -37,6 +46,9 @@ export class MockDataService implements IDataService {
   getData(): Observable<IMovie[]> {
     return of(this.movies);
   }
-
+  getMovie(): Observable<IMovie> {
+    return of(this.movie);
+  }
+ 
   constructor() { }
 }
