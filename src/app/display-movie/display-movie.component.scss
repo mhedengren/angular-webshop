@@ -3,3 +3,19 @@
     border: none;
     
 }
+
+.card-img-top {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+img {
+    height: 500px;
+    object-fit: cover;
+}
+
+button {
+    background:#4CAF50;
+    color: white;
+    padding: .5rem 1rem;
+}

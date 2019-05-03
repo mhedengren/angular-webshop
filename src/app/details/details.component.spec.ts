@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DetailsComponent } from './details.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('DetailsComponent', () => {
   let component: DetailsComponent;
@@ -10,7 +11,7 @@ describe('DetailsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ DetailsComponent ],
-      imports: [RouterModule.forRoot([])]
+      imports: [RouterModule.forRoot([]), HttpClientModule]
     })
     .compileComponents();
   }));
@@ -26,7 +27,7 @@ describe('DetailsComponent', () => {
   });
 
   it('should contain 1 movie', () => {
-    expect(component.movie.length).toBe(1);
+    expect(component.movie).toBeFalsy();
   });
 
 });
