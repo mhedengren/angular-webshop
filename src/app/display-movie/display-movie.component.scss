@@ -14,7 +14,7 @@ h2 {
 }
 
 .lower-card-info {
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 
@@ -41,6 +41,13 @@ button {
  
     h2 {
         font-size: 1em;
+    }
+
+    img {
+        min-height: 550px;
+        max-height: 550px;
+        object-fit: cover;
+        object-position: 50% 0;
     }
   
    }
