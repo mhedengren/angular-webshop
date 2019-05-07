@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { IMovie } from '../interfaces/IMovie';
+import { MockDataService } from '../services/mock-data.service';
 
 @Component({
   selector: 'app-details',
@@ -18,18 +19,21 @@ export class DetailsComponent implements OnInit {
     private dataservice: DataService) {
   }
 
-  getMovieInfo(id){
-    this.dataservice.getMovie(id).subscribe(data => {
-      this.movie = data;
-     });
-  }
+  // getMovieInfo(id) {
+  //   this.dataservice.getMovie(id).subscribe(data => {
+  //     this.movie = data;
+  //     //console.log(this.movie); 
+  //    });
+  // }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(pmap => {
       const id = pmap.get('id');
 
-      this.getMovieInfo(id);
-
+      this.dataservice.getMovie(id).subscribe(data => {
+        this.movie = data;
+     // this.getMovieInfo(id);
+    });
   });
   }
 }

@@ -21,8 +21,8 @@ describe('DetailsComponent', () => {
     activatedRoute.setParamMap({id: 1});
     TestBed.configureTestingModule({
       declarations: [ DetailsComponent ],
-      imports: [RouterTestingModule.withRoutes([])],
-      providers: [{provide: activatedRoute, usevalue: activatedRoute},
+      imports: [RouterTestingModule.withRoutes([]), HttpClientModule],
+      providers: [{provide: activatedRoute, useValue: activatedRoute},
                   {provide: DataService, useClass: MockDataService}]
     })
     .compileComponents();
@@ -39,9 +39,9 @@ describe('DetailsComponent', () => {
   });
 
   it('should receive 1 movie', () => {
-    component.getMovieInfo(1);
-    expect(component.movie).toBeDefined();
+    // component.getMovieInfo(3);
     expect(component.movie.name).toBe('The Dark Knight');
+    //console.log(component.movie.name);
   });
 
   // it('should contain 1 movie', () => {
