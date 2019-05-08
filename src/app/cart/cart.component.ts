@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  movieInCart = [];
+  constructor(private cartservice: CartService) {
+  }
 
   ngOnInit() {
+
+    this.cartservice.sendmovie.subscribe(movieInCart => {
+    this.movieInCart = movieInCart;
+    
+    });
+
   }
 
 }

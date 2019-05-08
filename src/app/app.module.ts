@@ -12,6 +12,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
 import { CartComponent } from './cart/cart.component';
 import { DisplayMovieComponent } from './display-movie/display-movie.component';
 import { DetailsComponent } from './details/details.component';
+import { CartService } from './services/cart.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { DetailsComponent } from './details/details.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
