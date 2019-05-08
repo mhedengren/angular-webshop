@@ -8,15 +8,18 @@ import { CartService } from '../services/cart.service';
 })
 export class CartComponent implements OnInit {
   message: string;
+  item: object;
 
   constructor(private cartservice: CartService) {}
 
   ngOnInit() {
   this.cartservice.currentMessage.subscribe(message => this.message = message)
+  this.cartservice.currentShoppingCart.subscribe(item => this.item = item)
   }
 
   newMessage(){
     this.cartservice.changeMessage('Hello');
   }
+
 
 }
