@@ -11,16 +11,19 @@ import { CartService } from '../services/cart.service';
 export class DisplayMovieComponent implements OnInit {
    @Input() movie: IMovie;
 
+   message: string;
+
    //@Output() cartitem: EventEmitter<IMovie> = new EventEmitter();
 
    constructor(private cartservice: CartService) { }
 
    ngOnInit() {
+     this.cartservice.currentMessage.subscribe(message => this.message = message)
   }
 
-  addMovie(){
-    this.cartservice.getMovie(this.movie);
-  }
+  // addMovie(){
+  //   this.cartservice.getMovie(this.movie);
+  // }
   //  @HostListener('click')
   // click() {
   //   this.cartservice.add();

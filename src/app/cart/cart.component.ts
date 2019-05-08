@@ -7,18 +7,16 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+  message: string;
 
-  movieInCart = [];
-  constructor(private cartservice: CartService) {
-  }
+  constructor(private cartservice: CartService) {}
 
   ngOnInit() {
+  this.cartservice.currentMessage.subscribe(message => this.message = message)
+  }
 
-    this.cartservice.sendmovie.subscribe(movieInCart => {
-    this.movieInCart = movieInCart;
-    
-    });
-
+  newMessage(){
+    this.cartservice.changeMessage('Hello');
   }
 
 }

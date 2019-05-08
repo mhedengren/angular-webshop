@@ -1,23 +1,17 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { IMovie } from '../interfaces/IMovie';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class CartService {
 
-  message = '';
+  private messageSource = new BehaviorSubject<string>("default message");
+  
+  currentMessage = this.messageSource.asObservable();
 
- @Output() sendmovie: EventEmitter<any> = new EventEmitter();
- //@Output() sendmessage: EventEmitter<string> = new EventEmitter();
+  constructor(){}
 
-
- getMovie(movie){
-   console.log(movie);
-   this.sendmovie.emit(movie);
- }
-
-  //   add() {
-  //   this.message = 'Hello Melker!';
-  //   // this.sendmovie.emit({id: 1 , name: 'Melker'});
-  //   this.sendmessage.emit(this.message);
-  // }
+  changeMessage(message: string){
+    this.messageSource.next(message)
+  }
 }
