@@ -1,11 +1,12 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
 import { IMovie } from '../interfaces/IMovie';
 import { BehaviorSubject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class CartService {
 
-  private messageSource = new BehaviorSubject<string>("default message");
+  private messageSource = new Subject<string>();
   private cartSource = new BehaviorSubject<any>({id: 1, name: "The Dark Knight"});
   
   currentMessage = this.messageSource.asObservable();
