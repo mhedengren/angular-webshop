@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { IMovie } from '../interfaces/IMovie';
 import { MockDataService } from '../services/mock-data.service';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-details',
@@ -16,26 +17,27 @@ export class DetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private dataservice: DataService) {
+    private dataservice: DataService,
+    private cartservice: CartService ) {
   }
 
-  // getMovieInfo(id) {
-  //   this.dataservice.getMovie(id).subscribe(data => {
-  //     this.movie = data;
-  //     //console.log(this.movie); 
-  //    });
-  // }
+  addToCart(movie){
+    this.cartservice.updateCart(movie);
+    localStorage.setItem("cart", JSON.stringify(movie));
+  }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(pmap => {
-      const id = pmap.get('id');
+      this.route.paramMap.subscribe(pmap => {
+          const id = pmap.get('id');
 
-      this.dataservice.getMovie(id).subscribe(data => {
-        this.movie = data;
-     // this.getMovieInfo(id);
-    });
-  });
+          this.dataservice.getMovie(id).subscribe(data => {
+            this.movie = data;
+        });
+      });
   }
+
+
+
 }
 
 

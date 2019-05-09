@@ -1,10 +1,6 @@
-<p>
-  cart works!
-</p>
-
-{{message}}
-{{item.name}}
-{{item.id}}
-
+<ul class="list-unstyled">
+  <li *ngFor="let item of items">
+  {{item.name}}</li>
+</ul>
 <!-- <button (click)="newMessage()"> change message </button> -->
 <button (click)="newMessage()">remove </button>

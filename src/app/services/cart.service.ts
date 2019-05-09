@@ -6,18 +6,18 @@ import { Subject } from 'rxjs';
 @Injectable()
 export class CartService {
 
-  private messageSource = new Subject<string>();
-  private cartSource = new BehaviorSubject<any>({id: 1, name: "The Dark Knight"});
+  private cartSource = new BehaviorSubject<any[]>([]);
+  private cart: IMovie[] = []
   
-  currentMessage = this.messageSource.asObservable();
   currentShoppingCart = this.cartSource.asObservable();
 
   constructor(){}
 
-  changeMessage(message: string){
-    this.messageSource.next(message)
-  }
-  updateCart(item: object){
-    this.cartSource.next(item);
-  }
+    updateCart(movie: IMovie){
+        this.cart.push(movie);
+        this.cartSource.next(this.cart);
+        localStorage.setItem("cart", JSON.stringify(this.cart));
+    }
+
+
 }

@@ -16,15 +16,13 @@ export class DisplayMovieComponent implements OnInit {
    constructor(private cartservice: CartService) { }
 
    ngOnInit() {
-     this.cartservice.currentMessage.subscribe(message => this.message = message);
+ 
   }
 
   addToCart(movie){
     this.cartservice.updateCart(movie);
-    localStorage.setItem("cart", JSON.stringify(movie));
+   
   }
-
-
 
 }
 

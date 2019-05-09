@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from '../services/cart.service';
+import { IMovie } from '../interfaces/IMovie';
 
 @Component({
   selector: 'app-cart',
@@ -8,18 +9,13 @@ import { CartService } from '../services/cart.service';
 })
 export class CartComponent implements OnInit {
   message: string;
-  item: object;
+  items: IMovie[];
 
   constructor(private cartservice: CartService) {}
 
   ngOnInit() {
-  this.cartservice.currentMessage.subscribe(message => this.message = message)
-  this.cartservice.currentShoppingCart.subscribe(item => this.item = item)
+  this.cartservice.currentShoppingCart.subscribe(items => this.items = items)
+  
   }
-
-  newMessage(){
-    this.cartservice.changeMessage('Hello');
-  }
-
 
 }
