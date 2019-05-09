@@ -11,17 +11,14 @@ import { CartService } from '../services/cart.service';
 export class DisplayMovieComponent implements OnInit {
    @Input() movie: IMovie;
 
-   message: string;
-
    constructor(private cartservice: CartService) { }
 
    ngOnInit() {
- 
+
   }
 
-  addToCart(movie){
+  addToCart(movie) {
     this.cartservice.updateCart(movie);
-   
   }
 
 }

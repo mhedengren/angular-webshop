@@ -1,6 +1,4 @@
-<ul class="list-unstyled">
-  <li *ngFor="let item of items">
-  {{item.name}}</li>
-</ul>
-<!-- <button (click)="newMessage()"> change message </button> -->
-<button (click)="newMessage()">remove </button>
+<app-display-cart
+ [cartItem]="cartItem"
+  *ngFor="let cartItem of items">
+</app-display-cart>

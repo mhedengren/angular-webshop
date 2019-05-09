@@ -13,6 +13,7 @@ import { CartComponent } from './cart/cart.component';
 import { DisplayMovieComponent } from './display-movie/display-movie.component';
 import { DetailsComponent } from './details/details.component';
 import { CartService } from './services/cart.service';
+import { DisplayCartComponent } from './display-cart/display-cart.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CartService } from './services/cart.service';
     CheckoutComponent,
     CartComponent,
     DisplayMovieComponent,
-    DetailsComponent
+    DetailsComponent,
+    DisplayCartComponent
   ],
   imports: [
     BrowserModule,

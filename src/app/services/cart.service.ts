@@ -1,10 +1,11 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
-import { IMovie } from '../interfaces/IMovie';
 import { ICart } from '../interfaces/ICart';
 import { BehaviorSubject } from 'rxjs';
 import { Subject } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class CartService {
 
   private cartSource = new BehaviorSubject<any[]>([]);
