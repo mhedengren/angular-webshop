@@ -8,7 +8,6 @@ import { IMovie } from '../interfaces/IMovie';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  message: string;
   items: IMovie[];
 
   constructor(private cartservice: CartService) {}
