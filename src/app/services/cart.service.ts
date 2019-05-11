@@ -9,16 +9,15 @@ import { Subject } from 'rxjs';
 export class CartService {
 
   private cartSource = new BehaviorSubject<any[]>([]);
-  private cart: ICart[] = []
-  
+  private cart: ICart[] = [];
   currentShoppingCart = this.cartSource.asObservable();
 
-  constructor(){}
+  constructor() {}
 
-    updateCart(movie){
+    updateCart(movie) {
         this.cart.push(movie);
         this.cartSource.next(this.cart);
-        localStorage.setItem("cart", JSON.stringify(this.cart));
+        localStorage.setItem('cart', JSON.stringify(this.cart));
     }
 
 
