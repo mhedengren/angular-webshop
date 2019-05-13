@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ICart } from '../interfaces/ICart';
+import { ICartItem } from '../interfaces/ICartItem';
 
 @Component({
   selector: 'app-display-cart',
@@ -8,7 +8,7 @@ import { ICart } from '../interfaces/ICart';
 })
 export class DisplayCartComponent implements OnInit {
 
-  @Input() cartItem: ICart[];
+  @Input() cartItem: ICartItem[];
 
   constructor() { }
 

@@ -1,5 +1,5 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
-import { ICart } from '../interfaces/ICart';
+import { ICartItem } from '../interfaces/ICartItem';
 import { BehaviorSubject } from 'rxjs';
 import { Subject } from 'rxjs';
 
@@ -9,7 +9,7 @@ import { Subject } from 'rxjs';
 export class CartService {
 
   private cartSource = new BehaviorSubject<any[]>([]);
-  private cart: ICart[] = [];
+  private cart: ICartItem[] = [];
   currentShoppingCart = this.cartSource.asObservable();
 
   constructor() {}

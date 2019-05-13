@@ -1,6 +1,6 @@
 import { IMovie } from './IMovie';
 
-export interface ICart {
+export interface ICartItem {
    movie: IMovie;
    amount: number;
 
