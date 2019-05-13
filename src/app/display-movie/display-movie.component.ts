@@ -18,7 +18,7 @@ export class DisplayMovieComponent implements OnInit {
   }
 
   addToCart(movie) {
-    this.cartservice.updateCart(movie);
+    this.cartservice.addMovie(movie);
   }
 
 }

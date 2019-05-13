@@ -10,11 +10,21 @@ import { ICartItem } from '../interfaces/ICartItem';
 export class CartComponent implements OnInit {
   items: ICartItem[];
 
-  constructor(private cartservice: CartService) {}
-
   ngOnInit() {
-  this.cartservice.currentShoppingCart.subscribe(items => this.items = items);
+    console.log(this.items);
+    }
+
+  constructor(private cartservice: CartService
+  ) {
+    this.cartservice.currentShoppingCart.subscribe( cart => {
+      this.items = Object.keys(cart).map( movieId => {
+        return {
+          movie: cart[movieId].movie,
+          amount: cart[movieId].amount
+        }
+      });
+    } );
+
 
   }
-
 }

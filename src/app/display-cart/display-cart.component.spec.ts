@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Component } from '@angular/core';
-import { ICart } from '../interfaces/ICart';
+import { ICartItem } from '../interfaces/ICartItem';
 import { RouterModule } from '@angular/router';
 import { DisplayCartComponent } from './display-cart.component';
 import { CartComponent } from '../cart/cart.component';
@@ -33,9 +33,9 @@ describe('DisplayCartComponent', () => {
   })
 
   class TestHostComponent {
-    cartItem: ICart[];
+    cartItem: ICartItem[];
 
-    setInput(newInput: ICart[]) {
+    setInput(newInput: ICartItem[]) {
       this.cartItem = newInput;
     }
   }

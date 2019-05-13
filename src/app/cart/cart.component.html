@@ -1,4 +1,8 @@
-<app-display-cart
+<!-- <app-display-cart
  [cartItem]="cartItem"
   *ngFor="let cartItem of items">
-</app-display-cart>
+</app-display-cart> -->
+
+<div *ngFor="let item of items">
+  {{item.amount}}x {{item.movie.name}}
+</div>
