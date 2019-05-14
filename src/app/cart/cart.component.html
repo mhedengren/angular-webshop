@@ -5,4 +5,10 @@
 
 <div *ngFor="let item of items">
   {{item.amount}}x {{item.movie.name}}
+  <img src="{{item.movie.imageUrl}}" alt="">
+  <button (click)="increaseAmount(item.movie)">+</button>
+  <button (click)="decreaseAmount(item.movie)">-</button>
+
 </div>
+
+<button (click)="showPrice()">Show total price</button>

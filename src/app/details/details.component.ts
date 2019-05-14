@@ -23,7 +23,7 @@ export class DetailsComponent implements OnInit {
 
   addToCart(movie){
     this.cartservice.addMovie(movie);
-    localStorage.setItem("cart", JSON.stringify(movie));
+    localStorage.setItem('cart', JSON.stringify(movie));
   }
 
   ngOnInit(): void {

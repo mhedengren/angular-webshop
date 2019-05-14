@@ -11,20 +11,28 @@ export class CartComponent implements OnInit {
   items: ICartItem[];
 
   ngOnInit() {
-    console.log(this.items);
-    }
+   
+  }
 
-  constructor(private cartservice: CartService
-  ) {
+  decreaseAmount(movie){
+    this.cartservice.removeMovie(movie);
+    console.log(this.items);
+  }
+  increaseAmount(movie){
+    this.cartservice.addMovie(movie);
+    console.log(this.items);
+  }
+
+  constructor(private cartservice: CartService) {
     this.cartservice.currentShoppingCart.subscribe( cart => {
       this.items = Object.keys(cart).map( movieId => {
         return {
           movie: cart[movieId].movie,
           amount: cart[movieId].amount
-        }
+        };
       });
-    } );
-
-
+    });
   }
+
+
 }

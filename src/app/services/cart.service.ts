@@ -17,6 +17,7 @@ export class CartService {
 
   currentShoppingCart = this.cartSource.asObservable();
 
+
   constructor() {}
   addMovie(movie: IMovie): void {
     if (this.cart[movie.id]) {
@@ -28,7 +29,23 @@ export class CartService {
         amount: 1
       };
     }
-
     this.cartSource.next(this.cart);
+    //localStorage.setItem('cart', JSON.stringify(this.cart));
 }
+
+removeMovie(movie: IMovie): void {
+  if (this.cart[movie.id]) {
+    let amount = this.cart[movie.id].amount;
+
+    if (amount === 1) {
+      delete this.cart[movie.id];
+    } else {
+      this.cart[movie.id].amount--;
+    }
+    this.cartSource.next(this.cart);
+  }
+}
+
+
+
 }
