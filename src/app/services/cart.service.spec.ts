@@ -9,4 +9,12 @@ describe('CartService', () => {
     const service: CartService = TestBed.get(CartService);
     expect(service).toBeTruthy();
   });
+
+
+  // it('should add 1 movie to the cart', () => {
+  //   const service: CartService = TestBed.get(CartService);
+  //   expect(service.cart).toBe(1);
+  // });
+
+
 });

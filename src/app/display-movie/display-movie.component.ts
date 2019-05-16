@@ -20,6 +20,9 @@ export class DisplayMovieComponent implements OnInit {
   addToCart(movie) {
     this.cartservice.addMovie(movie);
   }
+  deleteFromCart(movie) {
+    this.cartservice.removeMovie(movie);
+  }
 
 }
 
