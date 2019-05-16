@@ -25,13 +25,9 @@ export class CartComponent implements OnInit {
 
   constructor(private cartservice: CartService) {
     this.cartservice.currentShoppingCart.subscribe( cart => {
-      this.items = Object.keys(cart).map( movieId => {
-        return {
-          movie: cart[movieId].movie,
-          amount: cart[movieId].amount
-        };
-      });
+      this.items = cart;
     });
+    console.log(this.items);
   }
 
 
