@@ -14,23 +14,20 @@ export class CartComponent implements OnInit {
  
   }
 
-  // decreaseAmount(movie){
-  //   this.cartservice.removeMovie(movie);
-  //   console.log(this.items);
-  // }
-  // increaseAmount(movie){
-  //   this.cartservice.addMovie(movie);
-  //   console.log(this.items);
-  // }
+  decreaseAmount(movie){
+    this.cartservice.removeMovie(movie);
+  }
+  increaseAmount(movie){
+    this.cartservice.addMovie(movie);
+  }
 
   constructor(private cartservice: CartService) {
-    console.log('constructor Cart');
     this.items = cartservice.getCart();
 
-    cartservice.currentShoppingCart.subscribe( cart => {
-      this.items = cart;
-      console.log(this.items);
-   });
+  //   this.cartservice.currentShoppingCart.subscribe( cart => {
+  //     this.items = cart;
+  //     // console.log(this.items);
+  //  });
   }
 
 

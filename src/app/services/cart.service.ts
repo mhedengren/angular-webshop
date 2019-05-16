@@ -28,7 +28,7 @@ export class CartService {
     this.cart.push({movie, amount: 1});
 
     }
-    //localStorage.setItem('cart', JSON.stringify(this.cart));
+    localStorage.setItem('cart', JSON.stringify(this.cart));
     this.cartSource.next(this.cart);
     //console.log(this.cart)
   }
