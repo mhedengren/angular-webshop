@@ -26,10 +26,12 @@ export class CartService {
 
     if (!foundMovie) {
     this.cart.push({movie, amount: 1});
-    this.cartSource.next(this.cart);
+
     }
     
     //localStorage.setItem('cart', JSON.stringify(this.cart));
+    this.cartSource.next(this.cart);
+    console.log(this.cart)
   }
 
   removeMovie(movie: IMovie) {
@@ -40,8 +42,10 @@ export class CartService {
       this.cart.splice(i, 1);
     }
   }
-    this.cartSource.next(this.cart);
+   
     //console.log(this.cart);
-
+    this.cartSource.next(this.cart);
 }
+
+
 }
