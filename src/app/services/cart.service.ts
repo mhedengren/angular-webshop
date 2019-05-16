@@ -28,10 +28,9 @@ export class CartService {
     this.cart.push({movie, amount: 1});
 
     }
-    
     //localStorage.setItem('cart', JSON.stringify(this.cart));
     this.cartSource.next(this.cart);
-    console.log(this.cart)
+    //console.log(this.cart)
   }
 
   removeMovie(movie: IMovie) {
@@ -47,5 +46,7 @@ export class CartService {
     this.cartSource.next(this.cart);
 }
 
-
+  getCart(): ICartItem[] {
+    return this.cart;
+  }
 }

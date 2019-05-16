@@ -11,11 +11,7 @@ export class CartComponent implements OnInit {
   items: ICartItem[];
 
   ngOnInit() {
-    this.cartservice.currentShoppingCart.subscribe( cart => {
-      this.items = cart;
-      console.log('hello');
-
-   });
+ 
   }
 
   // decreaseAmount(movie){
@@ -28,8 +24,13 @@ export class CartComponent implements OnInit {
   // }
 
   constructor(private cartservice: CartService) {
-    
-    console.log(this.items);
+    console.log('constructor Cart');
+    this.items = cartservice.getCart();
+
+    cartservice.currentShoppingCart.subscribe( cart => {
+      this.items = cart;
+      console.log(this.items);
+   });
   }
 
 
