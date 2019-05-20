@@ -1,22 +1,24 @@
-<header class="fixed-top">
+<header class="sticky-top">
   <nav class="navbar navbar-expand-md bg-dark navbar-light">
     <div class="container-fluid">
     <a class="navbar-brand" routerLink="/">MovieCore</a>
-    <button class="navbar-toggler order-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="cart d-md-none order-1" routerLink="/cart" routerLinkActive=”active”><i class="fas fa-shopping-cart"></i></a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
             <a class="nav-link" routerLink="/movies" routerLinkActive=”active”>Movies</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" routerLink="/checkout" routerLinkActive=”active”>Checkout</a>
-        </li>
+        </li> -->
         <li class="nav-item">
-          <a class="nav-link" href="#" routerLinkActive=”active”>Admin</a>
+          <a class="nav-link d-md-none" routerLink="/cart" routerLinkActive=”active”>Cart</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#" routerLinkActive=”active”>Admin</a>
+        </li> -->
       </ul>
       <a class="cart d-none d-md-block" routerLink="/cart" routerLinkActive=”active”><i class="fas fa-shopping-cart"></i></a>
       <form class="form-inline my-2 my-lg-0">
