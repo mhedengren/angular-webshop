@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { IMovie } from '../interfaces/IMovie';
 import { MockDataService } from '../services/mock-data.service';
@@ -18,7 +18,8 @@ export class DetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private dataservice: DataService,
-    private cartservice: CartService ) {
+    private cartservice: CartService,
+    private router: Router ) {
   }
 
   addToCart(movie){
@@ -34,6 +35,14 @@ export class DetailsComponent implements OnInit {
             this.movie = data;
         });
       });
+
+      //Scroll to top on router change
+      this.router.events.subscribe((evt) => {
+        if (!(evt instanceof NavigationEnd)) {
+            return;
+        }
+        window.scrollTo(0, 0)
+    });
   }
 
 

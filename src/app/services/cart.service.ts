@@ -12,6 +12,11 @@ export class CartService {
 
   currentShoppingCart = this.cartSource.asObservable();
 
+  totalItemCount: number;
+
+  // totalItemCount=  new Subject<number>();
+  // count = this.totalItemCount.asObservable();
+
   constructor() {}
 
   addMovie(movie: IMovie) {
@@ -26,11 +31,12 @@ export class CartService {
 
     if (!foundMovie) {
     this.cart.push({movie, amount: 1});
-
     }
     localStorage.setItem('cart', JSON.stringify(this.cart));
     this.cartSource.next(this.cart);
-    //console.log(this.cart)
+
+    this.totalItemCount = this.cart.reduce((acc, { amount }) => acc + amount, 0);
+    console.log(this.totalItemCount);
   }
 
   removeMovie(movie: IMovie) {
