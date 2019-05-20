@@ -12,11 +12,6 @@ export class CartService {
 
   currentShoppingCart = this.cartSource.asObservable();
 
-  totalItemCount: number;
-
-  // totalItemCount=  new Subject<number>();
-  // count = this.totalItemCount.asObservable();
-
   constructor() {}
 
   addMovie(movie: IMovie) {
@@ -35,8 +30,8 @@ export class CartService {
     localStorage.setItem('cart', JSON.stringify(this.cart));
     this.cartSource.next(this.cart);
 
-    this.totalItemCount = this.cart.reduce((acc, { amount }) => acc + amount, 0);
-    console.log(this.totalItemCount);
+    // this.totalItemCount = this.cart.reduce((acc, { amount }) => acc + amount, 0);
+    // console.log(this.totalItemCount);
   }
 
   removeMovie(movie: IMovie) {
@@ -47,12 +42,13 @@ export class CartService {
       this.cart.splice(i, 1);
     }
   }
-   
-    //console.log(this.cart);
+    localStorage.setItem('cart', JSON.stringify(this.cart));
     this.cartSource.next(this.cart);
 }
 
   getCart(): ICartItem[] {
+    
+    this.cart = JSON.parse(localStorage.getItem('cart'));
     return this.cart;
   }
 }

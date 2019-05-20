@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
+import { ICartItem } from '../interfaces/ICartItem';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +9,22 @@ import { CartService } from '../services/cart.service';
 })
 export class HeaderComponent implements OnInit {
 
+  items: ICartItem[];
+  totalItemCount: number;
+
+
   constructor(private cartservice: CartService) {
-    console.log('hello');   }
-  
+  }
 
   ngOnInit() {
+    this.cartservice.getCart();
+
+    this.cartservice.currentShoppingCart.subscribe( cart => {
+      this.items = cart;
+      this.totalItemCount = this.items.reduce((acc, { amount }) => acc + amount, 0);
+      console.log(this.totalItemCount);
+   });
+
   }
 
 }

@@ -24,10 +24,10 @@ export class CartComponent implements OnInit {
   constructor(private cartservice: CartService) {
     this.items = cartservice.getCart();
 
-    this.cartservice.currentShoppingCart.subscribe( cart => {
-      this.items = cart;
-      // console.log(this.items);
-   });
+  //   this.cartservice.currentShoppingCart.subscribe( cart => {
+  //     this.items = cart;
+  //     // console.log(this.items);
+  //  });
   }
 
 
