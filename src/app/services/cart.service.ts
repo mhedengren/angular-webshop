@@ -25,7 +25,7 @@ export class CartService {
     }
 
     if (!foundMovie) {
-    this.cart.push({movie, amount: 1});
+      this.cart.push({movie, amount: 1});
     }
     localStorage.setItem('cart', JSON.stringify(this.cart));
     this.cartSource.next(this.cart);

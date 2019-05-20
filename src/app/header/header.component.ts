@@ -9,7 +9,7 @@ import { ICartItem } from '../interfaces/ICartItem';
 })
 export class HeaderComponent implements OnInit {
 
-  items: ICartItem[];
+  items: ICartItem[] = [];
   totalItemCount: number;
 
   constructor(private cartservice: CartService) {
@@ -17,8 +17,12 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
 
-    this.cartservice.getCart();
+    // Will make an empty array for cart-items if local storage is empty
+    if (JSON.parse(localStorage.getItem('cart')) === null){
+      localStorage.setItem('cart', JSON.stringify(this.items));
+    }
 
+    this.cartservice.getCart();
     this.cartservice.currentShoppingCart.subscribe( cart => {
       this.items = cart;
       this.totalItemCount = this.items.reduce((acc, { amount }) => acc + amount, 0);
