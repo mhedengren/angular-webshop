@@ -12,17 +12,16 @@ export class HeaderComponent implements OnInit {
   items: ICartItem[];
   totalItemCount: number;
 
-
   constructor(private cartservice: CartService) {
   }
 
   ngOnInit() {
+
     this.cartservice.getCart();
 
     this.cartservice.currentShoppingCart.subscribe( cart => {
       this.items = cart;
       this.totalItemCount = this.items.reduce((acc, { amount }) => acc + amount, 0);
-      console.log(this.totalItemCount);
    });
 
   }
