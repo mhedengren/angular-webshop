@@ -2,10 +2,17 @@
  [cartItem]="cartItem"
   *ngFor="let cartItem of items">
 </app-display-cart> -->
+<section id="checkout" class="row">
+<div class="col-12 col-md-6">
+ 
+</div>
 
+<div class="col-12 col-md-6">
 <div *ngFor="let item of items">
   {{item.amount}}x {{item.movie.name}}
   <img src="{{item.movie.imageUrl}}" alt="">
   <button (click)="increaseAmount(item.movie)">+</button>
   <button (click)="decreaseAmount(item.movie)">-</button>
 </div>
+</div>
+</section>

@@ -15,17 +15,23 @@ export class HeaderComponent implements OnInit {
   constructor(private cartservice: CartService) {
   }
 
+  getTotalCount() {
+    this.totalItemCount = this.items.reduce((acc, { amount }) => acc + amount, 0);
+  }
+
   ngOnInit() {
 
     // Will make an empty array for cart-items if local storage is empty
     if (JSON.parse(localStorage.getItem('cart')) === null){
       localStorage.setItem('cart', JSON.stringify(this.items));
     }
-
     this.cartservice.getCart();
+    this.items = JSON.parse(localStorage.getItem('cart'));
+    this.getTotalCount();
+
     this.cartservice.currentShoppingCart.subscribe( cart => {
       this.items = cart;
-      this.totalItemCount = this.items.reduce((acc, { amount }) => acc + amount, 0);
+      this.getTotalCount();
    });
 
   }
