@@ -24,13 +24,20 @@ export class CartComponent implements OnInit {
   items: ICartItem[];
   totalPrice: number;
 
+  paymentMethods = ['Klarna', 'VISA/ MasterCard', 'Paypal', 'Swish', 'Other']
+
   myForm = this.fb.group({
     // Varje rad blir en FormControl
     name: ['', Validators.minLength(3)],
     // type: ['', Validators.required],
     // age: [0, Validators.required],
-    email: ['', Validators.compose([Validators.email, Validators.required]) ]
+    email: ['', Validators.compose([Validators.email, Validators.required]) ],
+    paymentControl: ['', Validators.required]
   });
+
+  myFunction(){
+    alert('success');
+  }
 
   ngOnInit() {
   }
