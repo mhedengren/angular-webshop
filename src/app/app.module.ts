@@ -14,6 +14,7 @@ import { DisplayMovieComponent } from './display-movie/display-movie.component';
 import { DetailsComponent } from './details/details.component';
 import { CartService } from './services/cart.service';
 import { DisplayCartComponent } from './display-cart/display-cart.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { DisplayCartComponent } from './display-cart/display-cart.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [CartService],
   bootstrap: [AppComponent]
