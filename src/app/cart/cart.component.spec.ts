@@ -1,6 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CartComponent } from './cart.component';
-import { DisplayCartComponent } from '../display-cart/display-cart.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
@@ -11,8 +10,8 @@ describe('CartComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CartComponent, DisplayCartComponent ],
-      imports:[ReactiveFormsModule, FormsModule]
+      declarations: [ CartComponent ],
+      imports: [ReactiveFormsModule, FormsModule]
     })
     .compileComponents();
   }));

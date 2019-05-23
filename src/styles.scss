@@ -16,17 +16,12 @@ input:focus::-webkit-input-placeholder { color:transparent; }
   input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
 .hero {
-    //display: flex;
-    //flex-direction: column;
-    //justify-content: center;
-    //align-items: center;
     position: absolute;
     width: 100%;
     min-height: 480px;
     height: 80vh;
     max-height: 560px;
     box-sizing: border-box;
-   // padding: 48px 48px 32px;
     overflow: hidden;
     -webkit-transform:  skewY(8deg); /* Safari & Chrome */
     -moz-transform: skewY(8deg); /* Firefox */
