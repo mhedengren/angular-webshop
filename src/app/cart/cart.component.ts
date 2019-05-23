@@ -25,7 +25,7 @@ export class CartComponent implements OnInit {
   paymentMethods = ['Klarna', 'VISA/ MasterCard', 'Paypal', 'Swish', 'Other'];
 
   myForm = this.fb.group({
-    name: ['', Validators.minLength(3)],
+    // name: ['', Validators.minLength(3)],
     email: ['', Validators.compose([Validators.email, Validators.required]) ],
     paymentControl: ['', Validators.required]
   });

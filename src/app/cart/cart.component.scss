@@ -1,7 +1,18 @@
+.bg {
+  background:rgba(0, 0, 0, 0.15);
+}
+
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
 .checkout-form {
     //background:rgba(0, 0, 0, 0.15);
-    padding: 2rem 4rem;
-
+    padding: 4rem;
 
     .form-group {
       margin: 1.5rem 0;
@@ -16,11 +27,11 @@
         border: none;
         background-color: #fafafa;
         padding: 0 16px;
+        width: 300px !important;
         -webkit-appearance: none;
      }
 
      button {
-
         margin-top: 1rem;
         padding: 13px 24px;
         color: #ffffff;
@@ -40,18 +51,21 @@
       }
 }
 
-.bg {
-  background:rgba(0, 0, 0, 0.15);
-}
 
 .products-container {
-
+  max-height: 450px;
+  overflow: scroll;
   margin-right: 15px;
   margin-left: 15px;
-  padding: 2rem 4rem;
+  padding: 4rem;
+
 
   h5 {
     font-size: 1em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
   }
 
   ul{
@@ -74,7 +88,7 @@
     height: 25px;
   }
   .decrease {
-    background-color: rgb(231, 102, 102);
+    background-color: rgb(179, 179, 179);
     color: #fff;
     margin: 5px;
     width: 25px;

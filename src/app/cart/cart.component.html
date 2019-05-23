@@ -1,13 +1,13 @@
-<h1 class="text-center mt-3 mb-3">Checkout</h1>
+<h1 class="text-center mt-4 mb-3">Checkout</h1>
 <section id="checkout" class="row mt-5 justify-content-center">
-    <div class="col-11 col-md-6 col-xl-4 mb-5 order-2  bg order-md-1">
+    <div class="col-11 form-wrapper col-md-6 col-xl-4 mb-5 order-2 bg order-md-1">
         <!-- Form -->
         <form [formGroup]="myForm" class="checkout-form" (ngSubmit)="orderComplete()">
             <h2 class="text-center p-0 mb-4">Details</h2>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter your name">
-            </div>
+            </div> -->
             <div class="form-group">
                 <label for="name">Email</label>
                 <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter your email">
@@ -25,11 +25,13 @@
     </div>
 
     <div class="col-11 col-md-6 col-xl-4 mb-5 products-container bg order-1 order-md-2">
+
+        <div class="big-wrapper">
         <div class="order-summary mb-4">
-            <h2 class="text-center mb-4">Summary</h2>
-            <h3 class="text-center" *ngIf="totalPrice"><span>{{totalPrice}} ;-</span></h3>
-            <h5><span>{{myForm.value.name}}</span></h5>
-            <h5><span>{{myForm.value.email}}</span></h5>
+            <h2 class="text-center mb-2" *ngIf="totalPrice">{{totalPrice}} ;-</h2>
+            <!-- <h3 class="text-center" *ngIf="totalPrice"><span>{{totalPrice}} ;-</span></h3> -->
+            <!-- <h5>{{myForm.value.name}}</h5> -->
+            <h5>{{myForm.value.email}}</h5>
             <h5>{{myForm.value.paymentControl}}</h5>
         </div>
         <div class="products">
@@ -43,6 +45,6 @@
                 </li>
             </ul>
         </div>
-
+    </div>
     </div>
 </section>
