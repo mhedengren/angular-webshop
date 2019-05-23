@@ -23,7 +23,6 @@ export class CartComponent implements OnInit {
   }
   items: ICartItem[];
   totalPrice: number;
-
   paymentMethods = ['Klarna', 'VISA/ MasterCard', 'Paypal', 'Swish', 'Other']
 
   myForm = this.fb.group({
@@ -35,7 +34,7 @@ export class CartComponent implements OnInit {
     paymentControl: ['', Validators.required]
   });
 
-  myFunction(){
+  myFunction() {
     alert('success');
   }
 
@@ -48,16 +47,4 @@ export class CartComponent implements OnInit {
   increaseAmount(movie){
     this.cartservice.addMovie(movie);
   }
-
-
-
 }
-
-
-
-    // for (let i = 0; i < this.items.length; i++) {
-    //    const sum = this.items[i].movie.price * this.items[i].amount;
-
-    //    this.totalPrice += sum;
-    //    console.log(sum);
-    // }

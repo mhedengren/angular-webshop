@@ -1,39 +1,47 @@
-<h1 class="text-center mt-3 mb-3">Order checkout</h1>
+<h1 class="text-center mt-3 mb-3">Checkout</h1>
 <section id="checkout" class="row mt-5 justify-content-center">
-<div class="col-10 col-md-4">
-  <!-- Form -->
-  <form [formGroup]="myForm" class="checkout-form" (ngSubmit)="myFunction()">
-    <h2 class="text-center">Enter Details</h2>
-      <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter your name">
-      </div>
-      <div class="form-group">
-          <label for="name">Email</label>
-          <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter your email">
-      </div>
-      <div class="form-group">
-          <label for="payment-method">Payment Method</label>
-          <select formControlName="paymentControl" class="form-control">
-              <option [value]="method" *ngFor="let method of paymentMethods">{{method}}</option>
-            </select>
-        </div>
-    <div class="button-wrapper text-center">
-    <button type="submit" [disabled]="!myForm.valid">Confirm</button>
+    <div class="col-12 col-md-6 col-xl-4 mb-5 md-md-0 order-2 order-md-1">
+        <!-- Form -->
+        <form [formGroup]="myForm" class="checkout-form" (ngSubmit)="myFunction()">
+            <h2 class="text-center p-0 mb-4">Details</h2>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="name">Email</label>
+                <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="payment-method">Payment Method</label>
+                <select formControlName="paymentControl" class="form-control">
+                    <option [value]="method" *ngFor="let method of paymentMethods">{{method}}</option>
+                </select>
+            </div>
+            <div class="button-wrapper text-center">
+                <button type="submit" [class.gray]="!myForm.valid" [disabled]="!myForm.valid">Confirm</button>
+            </div>
+        </form>
     </div>
-  </form>
-  
-</div>
-<div class="col-10 col-md-4 products-container">
-<h2 class="text-center">Order Summary</h2>
-<h5 class="text-centerr">{{myForm.value.name}}</h5>
-<h5 class="text-centerr">{{myForm.value.email}}</h5>
-<h5 class="text-centerr">{{myForm.value.paymentControl}}</h5>
-<div *ngFor="let item of items">
-  {{item.amount}}x {{item.movie.name}}
-  <!-- <img src="{{item.movie.imageUrl}}" alt=""> -->
-  <button (click)="increaseAmount(item.movie)">+</button>
-  <button (click)="decreaseAmount(item.movie)">-</button>
-</div>
-</div>
+
+    <div class="col-12 col-md-6 col-xl-4 mb-5 md-md-0 products-container order-1 order-md-2">
+        <div class="order-summary mb-4">
+            <h2 class="text-center mb-4">Summary</h2>
+            <h5 class="text-centerr"><span>{{myForm.value.name}}</span></h5>
+            <h5 class="text-centerr"><span>{{myForm.value.email}}</span></h5>
+            <h5 class="text-centerr">{{myForm.value.paymentControl}}</h5>
+        </div>
+        <div class="products">
+            <ul class="p-0">
+                <li *ngFor="let item of items">
+                    <button class="increase" (click)="increaseAmount(item.movie)">+</button>
+                    <button class="decrease" (click)="decreaseAmount(item.movie)">-</button>
+                    <img src="{{item.movie.imageUrl}}" alt="{{item.movie.name}}">
+                    {{item.amount}}x {{item.movie.name}}
+
+                </li>
+            </ul>
+        </div>
+
+    </div>
 </section>

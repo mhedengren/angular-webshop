@@ -1,16 +1,14 @@
-img {
-    max-height: 100px;
-}
-
-
 .checkout-form {
-    //min-height: 400px;
     background:rgba(0, 0, 0, 0.15);
     padding: 2rem 4rem;
-    border-radius: 15px;
+    //border-radius: 15px;
 
     .form-group {
       margin: 1.5rem 0;
+    }
+
+    .gray {
+      background-color: rgb(179, 179, 179);
     }
 
     input {
@@ -43,5 +41,31 @@ img {
 }
 
 .products-container {
+
+  background:rgba(0, 0, 0, 0.15);
+  padding: 2rem 4rem;
+  //border-radius: 15px;
+
+  // h5 {
+  //   border-left: 5px solid orange;
+  //   padding-left: 5px;
+  // }
+
+  h5 {
+    font-size: 1em;
+  }
+
+  ul{
+    list-style-type: none;
+  }
+
+  img{
+    max-height: 50px;
+  }
+
+  .products {
+    overflow: scroll;
+  }
+
    
 }
