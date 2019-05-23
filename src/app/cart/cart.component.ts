@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
   }
   items: ICartItem[] = [];
   totalPrice: number;
-  paymentMethods = ['Klarna', 'VISA/ MasterCard', 'Paypal', 'Swish', 'Other'];
+  paymentMethods = ['Klarna', 'VISA / MasterCard', 'Paypal', 'Swish', 'Other'];
 
   myForm = this.fb.group({
     // name: ['', Validators.minLength(3)],
