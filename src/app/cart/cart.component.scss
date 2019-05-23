@@ -7,12 +7,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 500px;
+  padding: 4rem;
  
 }
 
 .checkout-form {
     //background:rgba(0, 0, 0, 0.15);
-    padding: 4rem;
+
 
     .form-group {
       margin: 1.5rem 0;
@@ -53,19 +55,22 @@
 
 
 .products-container {
-  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
+  height: 500px;
   overflow: scroll;
   margin-right: 15px;
   margin-left: 15px;
   padding: 4rem;
 
-
   h5 {
     font-size: 1em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
+  }
+
+  span {
+    color: yellow;
   }
 
   ul{

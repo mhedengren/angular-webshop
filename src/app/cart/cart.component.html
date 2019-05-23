@@ -25,14 +25,12 @@
     </div>
 
     <div class="col-11 col-md-6 col-xl-4 mb-5 products-container bg order-1 order-md-2">
-
-        <div class="big-wrapper">
         <div class="order-summary mb-4">
+            <!-- <h2 class="text-center">Total Price:</h2> -->
             <h2 class="text-center mb-2" *ngIf="totalPrice">{{totalPrice}} ;-</h2>
             <!-- <h3 class="text-center" *ngIf="totalPrice"><span>{{totalPrice}} ;-</span></h3> -->
             <!-- <h5>{{myForm.value.name}}</h5> -->
-            <h5>{{myForm.value.email}}</h5>
-            <h5>{{myForm.value.paymentControl}}</h5>
+           
         </div>
         <div class="products">
             <ul class="p-0">
@@ -41,10 +39,12 @@
                     <button class="decrease" (click)="decreaseAmount(item.movie)">-</button>
                     <img src="{{item.movie.imageUrl}}" alt="{{item.movie.name}}">
                     {{item.amount}}x {{item.movie.name}}
-
                 </li>
             </ul>
         </div>
-    </div>
+        <div class="delivery-info">
+        <h5 class="pt-4">Deliver to: <span>{{myForm.value.email}}</span></h5>
+        <h5>Payment method: <span>{{myForm.value.paymentControl}}</span></h5>
+         </div>
     </div>
 </section>
