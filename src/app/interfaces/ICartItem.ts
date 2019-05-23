@@ -5,11 +5,3 @@ export interface ICartItem {
    amount: number;
 
 }
-
-
-export interface IOrderRow {
-   productId: number;
-   amount: number;
-
-}
-

@@ -1,5 +1,5 @@
 .checkout-form {
-    background:rgba(0, 0, 0, 0.15);
+    //background:rgba(0, 0, 0, 0.15);
     padding: 2rem 4rem;
 
 
@@ -40,9 +40,14 @@
       }
 }
 
+.bg {
+  background:rgba(0, 0, 0, 0.15);
+}
+
 .products-container {
 
-  background:rgba(0, 0, 0, 0.15);
+  margin-right: 15px;
+  margin-left: 15px;
   padding: 2rem 4rem;
 
   h5 {

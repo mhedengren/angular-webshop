@@ -1,6 +1,6 @@
 <h1 class="text-center mt-3 mb-3">Checkout</h1>
 <section id="checkout" class="row mt-5 justify-content-center">
-    <div class="col-12 col-md-6 col-xl-4 mb-5 md-md-0 order-2 order-md-1">
+    <div class="col-11 col-md-6 col-xl-4 mb-5 order-2  bg order-md-1">
         <!-- Form -->
         <form [formGroup]="myForm" class="checkout-form" (ngSubmit)="orderComplete()">
             <h2 class="text-center p-0 mb-4">Details</h2>
@@ -24,7 +24,7 @@
         </form>
     </div>
 
-    <div class="col-12 col-md-6 col-xl-4 mb-5 md-md-0 products-container order-1 order-md-2">
+    <div class="col-11 col-md-6 col-xl-4 mb-5 products-container bg order-1 order-md-2">
         <div class="order-summary mb-4">
             <h2 class="text-center mb-4">Summary</h2>
             <h3 class="text-center" *ngIf="totalPrice"><span>{{totalPrice}} ;-</span></h3>
