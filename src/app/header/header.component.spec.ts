@@ -24,17 +24,4 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-
-  // it('should add 1 to the counter in the header', async(inject([CartService], (cartservice: CartService) => {
-  //   expect(component.totalItemCount).toBe(0);
-
-  //   cartservice.addMovie({id: 3, name: 'Avengers Endgame', description: 'abcd', price: 199,
-  //   imageUrl: 'https://i.imgur.com/DpCHP0h.jpg',
-  //   year: 2008, added: '2016-01-05T00:00:00',
-  //   productCategory: [{categoryId: 5, category: null}, {categoryId: 6, category: null}]})
-    
-  //   expect(component.totalItemCount).toBe(1);
-    
-  // })));
-
 });

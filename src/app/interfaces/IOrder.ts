@@ -1,4 +1,4 @@
-import { ICartItem } from './ICartItem';
+import { ICartItem, IOrderRow } from './ICartItem';
 
 export interface IOrder {
     id: number;
@@ -8,5 +8,5 @@ export interface IOrder {
     paymentMethod: string;
     totalPrice: number;
     status: boolean;
-    orderRows: ICartItem[];
+    orderRows: IOrderRow[];
 }
