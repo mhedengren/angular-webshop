@@ -1,4 +1,4 @@
-import { ICartItem, IOrderRow } from './ICartItem';
+import { IOrderRow } from './IOrderRow';
 
 export interface IOrder {
     id: number;
