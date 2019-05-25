@@ -36,10 +36,17 @@ export class CartComponent implements OnInit {
   });
 
   orderComplete() {
-    const newOrder: IOrder = {id: 10, companyId: 2, created: '2011', createdBy: 'Melker', 
-    paymentMethod: 'Swish Jao', totalPrice: 199, status: 0, orderRows: [{productId:1, amount: 1}]}
-    this.dataservice.postOrder(newOrder)
-    .subscribe();
+    const newOrder: IOrder = {
+      id: 0,
+      companyId: 2,
+      created: '0001-01-01T00:00:00',
+      createdBy: 'Melker2',
+      paymentMethod: null,
+      totalPrice: this.totalPrice,
+      status: 0,
+      orderRows: [{ productId: 76 , amount: 1 }]
+    }
+    this.dataservice.postOrder(newOrder).subscribe();
     console.log(newOrder);
   }
 
@@ -47,8 +54,6 @@ export class CartComponent implements OnInit {
     this.totalPrice = 0;
     for (let i = 0; i < this.items.length; i++) {
       this.totalPrice += this.items[i].amount * this.items[i].movie.price;
-      console.log(this.totalPrice);
-      console.log(this.items);
     }
   }
 
@@ -59,7 +64,6 @@ export class CartComponent implements OnInit {
   decreaseAmount(movie){
     this.cartservice.removeMovie(movie);
     this.getTotalPrice();
-    console.log(this.items);
   }
   increaseAmount(movie){
     this.cartservice.addMovie(movie);
