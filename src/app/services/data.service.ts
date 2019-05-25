@@ -17,7 +17,7 @@ export class DataService {
   getMovie(id): Observable<IMovie> {
   return this.httpClient.get<IMovie>('https://medieinstitutet-wie-products.azurewebsites.net/api/products/' + id);
   }
-  postOrder(order: IOrder){
+  postOrder(order: IOrder) {
     return this.httpClient.post('https://medieinstitutet-wie-products.azurewebsites.net/api/orders/', order);
   }
 }

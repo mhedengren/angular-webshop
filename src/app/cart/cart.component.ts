@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
 import { ICartItem } from '../interfaces/ICartItem';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { IDataService } from '../interfaces/IDataService';
 import { DataService } from '../services/data.service';
 import { IOrder } from '../interfaces/IOrder';
+import * as moment from 'moment';
 
 
 @Component({
@@ -36,17 +36,18 @@ export class CartComponent implements OnInit {
   });
 
   orderComplete() {
-    const newOrder: IOrder = {
+
+   const newOrder: IOrder = {
       id: 0,
-      companyId: 2,
-      created: '0001-01-01T00:00:00',
-      createdBy: 'Melker2',
-      paymentMethod: null,
+      companyId: 13,
+      created: moment().add(2, 'hours').format(),
+      createdBy: this.myForm.get('email').value,
+      paymentMethod: this.myForm.get('paymentControl').value,
       totalPrice: this.totalPrice,
       status: 0,
       orderRows: [{ productId: 76 , amount: 1 }]
-    }
-    this.dataservice.postOrder(newOrder).subscribe();
+    };
+    // this.dataservice.postOrder(newOrder).subscribe();
     console.log(newOrder);
   }
 
