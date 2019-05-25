@@ -2,11 +2,11 @@ import { IOrderRow } from './IOrderRow';
 
 export interface IOrder {
     id: number;
-    companyId: string;
+    companyId: number;
     created: string;
     createdBy: string;
     paymentMethod: string;
     totalPrice: number;
-    status: boolean;
+    status: number;
     orderRows: IOrderRow[];
 }
