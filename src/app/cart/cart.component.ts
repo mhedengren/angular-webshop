@@ -36,10 +36,9 @@ export class CartComponent implements OnInit {
   });
 
   orderComplete() {
-
    const newOrder: IOrder = {
       id: 0,
-      companyId: 13,
+      companyId: 2,
       created: moment().add(2, 'hours').format(),
       createdBy: this.myForm.get('email').value,
       paymentMethod: this.myForm.get('paymentControl').value,
@@ -47,8 +46,13 @@ export class CartComponent implements OnInit {
       status: 0,
       orderRows: [{ productId: 76 , amount: 1 }]
     };
-    // this.dataservice.postOrder(newOrder).subscribe();
-    console.log(newOrder);
+
+   if (this.items.length) {
+        this.dataservice.postOrder(newOrder).subscribe();
+      } else {
+        return false;
+      }
+
   }
 
   getTotalPrice() {
