@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
+import { IOrder } from '../interfaces/IOrder';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  orders: IOrder[];
+
+  constructor(private dataservice: DataService) { }
 
   ngOnInit() {
+    this.dataservice.getOrders().subscribe(data => {
+      this.orders = data;
+      console.log(this.orders);
+    });
   }
 
 }

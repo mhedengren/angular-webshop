@@ -12,10 +12,13 @@ export class DataService {
   constructor(private httpClient: HttpClient) { }
 
   getData(): Observable<IMovie[]> {
-  return this.httpClient.get<IMovie[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/products');
+    return this.httpClient.get<IMovie[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/products');
   }
   getMovie(id): Observable<IMovie> {
-  return this.httpClient.get<IMovie>('https://medieinstitutet-wie-products.azurewebsites.net/api/products/' + id);
+    return this.httpClient.get<IMovie>('https://medieinstitutet-wie-products.azurewebsites.net/api/products/' + id);
+  }
+  getOrders(): Observable<IOrder[]> {
+    return this.httpClient.get<IOrder[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=2');
   }
   postOrder(order: IOrder) {
     return this.httpClient.post('https://medieinstitutet-wie-products.azurewebsites.net/api/orders/', order);
