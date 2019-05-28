@@ -16,8 +16,19 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
     this.dataservice.getOrders().subscribe(data => {
       this.orders = data;
-      console.log(this.orders);
+      // console.log(this.orders);
     });
   }
+
+  deleteOrder(order) {
+    this.dataservice.deleteOrder(order.id).subscribe();
+
+    for (let i = 0; i < this.orders.length; i++) {
+      if (order.id === this.orders[i].id) {
+        this.orders.splice(i, 1);
+     }
+   }
+  }
+
 
 }

@@ -20,6 +20,9 @@ export class DataService {
   getOrders(): Observable<IOrder[]> {
     return this.httpClient.get<IOrder[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders?companyId=2');
   }
+  deleteOrder(id): Observable<IOrder[]> {
+    return this.httpClient.delete<IOrder[]>('https://medieinstitutet-wie-products.azurewebsites.net/api/orders/' + id);
+  }
   postOrder(order: IOrder) {
     return this.httpClient.post('https://medieinstitutet-wie-products.azurewebsites.net/api/orders/', order);
   }
