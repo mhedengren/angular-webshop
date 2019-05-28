@@ -1,5 +1,5 @@
 .bg {
-  background:rgba(0, 0, 0, 0.15);
+  //background:rgba(0, 0, 0, 0.15);
 }
 
 
@@ -47,9 +47,9 @@
         transition-duration: 0.15s;
         transition-timing-function: ease-in-out;
         
-        &:hover {
-          background-color: #9bd57b;
-        }
+        // &:hover {
+        //   background-color: #9bd57b;
+        // }
       }
 }
 
@@ -70,7 +70,7 @@
   }
 
   span {
-    color: yellow;
+    color: lightblue;
   }
 
   ul{
