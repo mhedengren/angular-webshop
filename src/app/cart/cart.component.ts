@@ -38,7 +38,13 @@ export class CartComponent implements OnInit {
   }
 
   orderComplete() {
-   const newOrder: IOrder = {
+    for (let i = 0; i < this.items.length; i++) {
+      const productId = this.items[i].movie.id;
+      const amount = this.items[i].amount;
+      this.orderRows.push({productId, amount});
+    }
+
+    const newOrder: IOrder = {
       id: 0,
       companyId: 2,
       created: moment().add(2, 'hours').format(),
@@ -46,15 +52,18 @@ export class CartComponent implements OnInit {
       paymentMethod: this.myForm.get('paymentControl').value,
       totalPrice: this.totalPrice,
       status: 0,
-      orderRows: [{ productId: 76 , amount: 1 }]
+      orderRows: this.orderRows
     };
 
-   if (this.items.length) {
-        //this.dataservice.postOrder(newOrder).subscribe();
-        this.cartservice.emptyCart();
+    if (this.items.length) {
+      //this.dataservice.postOrder(newOrder).subscribe();
+      this.cartservice.emptyCart();
     } else {
         return false;
     }
+
+    console.log(this.items);
+
   }
 
   getTotalPrice() {

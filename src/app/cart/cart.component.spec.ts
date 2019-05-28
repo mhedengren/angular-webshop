@@ -39,15 +39,15 @@ describe('CartComponent', () => {
     });
   });
 
-  // it('should confirm that order is posted an cart is emptied', () => {
-  //   component.items = [];
-  //   let service = new MockDataService();
-  //   service.getData().subscribe(movies => {
-  //     component.items.push( { movie: movies[0], amount: 5 });
-  //     expect(component.items.length).toBe(1);
-  //     component.orderComplete();
-  //     expect(component.items.length).toBe(0);
-  //   });
-  // });
+  it('should confirm that an order is posted', () => {
+    component.items = [];
+    let service = new MockDataService();
+    service.getData().subscribe(movies => {
+      component.items.push( { movie: movies[0], amount: 5 });
+      component.orderComplete();
+      expect(component.orderRows.length).toBe(0);
+    });
+  });
+
 
   });
