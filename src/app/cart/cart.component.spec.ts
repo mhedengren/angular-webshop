@@ -45,7 +45,7 @@ describe('CartComponent', () => {
     service.getData().subscribe(movies => {
       component.items.push( { movie: movies[0], amount: 5 });
       component.orderComplete();
-      expect(component.orderRows.length).toBe(0);
+      expect(component.items.length).toBe(0);
     });
   });
 

@@ -47,6 +47,7 @@ export class CartService {
     this.cart.length = 0;
     localStorage.setItem('cart', JSON.stringify(this.cart));
     this.cartSource.next(this.cart);
+    return this.cart;
   }
 
   getCart(): ICartItem[] {

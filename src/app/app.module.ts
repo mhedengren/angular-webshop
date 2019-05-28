@@ -14,6 +14,7 @@ import { DisplayMovieComponent } from './display-movie/display-movie.component';
 import { DetailsComponent } from './details/details.component';
 import { CartService } from './services/cart.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CheckoutComponent,
     CartComponent,
     DisplayMovieComponent,
-    DetailsComponent
+    DetailsComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

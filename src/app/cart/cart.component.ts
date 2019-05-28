@@ -56,13 +56,11 @@ export class CartComponent implements OnInit {
     };
 
     if (this.items.length) {
-      //this.dataservice.postOrder(newOrder).subscribe();
-      this.cartservice.emptyCart();
+      this.dataservice.postOrder(newOrder).subscribe();
+      this.items = this.cartservice.emptyCart();
     } else {
         return false;
     }
-
-    console.log(this.items);
 
   }
 
