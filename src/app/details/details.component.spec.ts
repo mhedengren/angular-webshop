@@ -39,13 +39,8 @@ describe('DetailsComponent', () => {
   });
 
   it('should receive 1 movie', () => {
-    // component.getMovieInfo(3);
     expect(component.movie.name).toBe('The Dark Knight');
-    //console.log(component.movie.name);
   });
 
-  // it('should contain 1 movie', () => {
-  //   expect(component.movie).toBeFalsy();
-  // });
 
 });

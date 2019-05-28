@@ -27,9 +27,7 @@ describe('CartComponent', () => {
   });
 
   it('should confirm that total price matches amount and price in items', () => {
-
     component.items = [];
-
     let service = new MockDataService();
     service.getData().subscribe(movies => {
       component.items.push( { movie: movies[0], amount: 5 });
@@ -39,7 +37,17 @@ describe('CartComponent', () => {
       component.getTotalPrice();
       expect(component.totalPrice).toBe(price);
     });
-
   });
 
-});
+  // it('should confirm that order is posted an cart is emptied', () => {
+  //   component.items = [];
+  //   let service = new MockDataService();
+  //   service.getData().subscribe(movies => {
+  //     component.items.push( { movie: movies[0], amount: 5 });
+  //     expect(component.items.length).toBe(1);
+  //     component.orderComplete();
+  //     expect(component.items.length).toBe(0);
+  //   });
+  // });
+
+  });

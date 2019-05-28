@@ -6,6 +6,7 @@ import { Validators } from '@angular/forms';
 import { DataService } from '../services/data.service';
 import { IOrder } from '../interfaces/IOrder';
 import * as moment from 'moment';
+import { IOrderRow } from '../interfaces/IOrderRow';
 
 
 @Component({
@@ -20,20 +21,21 @@ export class CartComponent implements OnInit {
     private fb: FormBuilder,
     private dataservice: DataService) {
     this.items = cartservice.getCart();
-    // this.cartservice.currentShoppingCart.subscribe( cart => {
-    //   this.items = cart;
-    // });
   }
+
   items: ICartItem[] = [];
-  orders: IOrder[];
   totalPrice: number;
   paymentMethods = ['Klarna', 'VISA / MasterCard', 'Paypal', 'Swish', 'Other'];
+  orderRows: IOrderRow[] = [];
 
   myForm = this.fb.group({
-    // name: ['', Validators.minLength(3)],
     email: ['', Validators.compose([Validators.email, Validators.required]) ],
     paymentControl: ['', Validators.required]
   });
+
+  ngOnInit() {
+    this.getTotalPrice();
+  }
 
   orderComplete() {
    const newOrder: IOrder = {
@@ -48,11 +50,11 @@ export class CartComponent implements OnInit {
     };
 
    if (this.items.length) {
-        this.dataservice.postOrder(newOrder).subscribe();
-      } else {
+        //this.dataservice.postOrder(newOrder).subscribe();
+        this.cartservice.emptyCart();
+    } else {
         return false;
-      }
-
+    }
   }
 
   getTotalPrice() {
@@ -62,15 +64,12 @@ export class CartComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.getTotalPrice();
-  }
-
-  decreaseAmount(movie){
+  decreaseAmount(movie) {
     this.cartservice.removeMovie(movie);
     this.getTotalPrice();
   }
-  increaseAmount(movie){
+
+  increaseAmount(movie) {
     this.cartservice.addMovie(movie);
     this.getTotalPrice();
   }
