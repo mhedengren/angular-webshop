@@ -21,6 +21,7 @@ export class AdminComponent implements OnInit {
   }
 
   deleteOrder(order) {
+
     this.dataservice.deleteOrder(order.id).subscribe();
 
     for (let i = 0; i < this.orders.length; i++) {
