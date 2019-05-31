@@ -20,8 +20,8 @@
           <a class="nav-link"routerLink="/admin" routerLinkActive=”active”>Admin</a>
         </li>
       </ul>
-      <a class="cart d-none d-md-block" (click)="status=!status" routerLinkActive=”active”>{{totalItemCount}} <i class="fas fa-shopping-cart"></i></a>
-      <div class="small-cart" [ngClass]="status ? 'hide-small-cart' : 'show-small-cart'">
+      <a class="cart d-none d-md-block" routerLinkActive=”active”>{{totalItemCount}} <i class="fas fa-shopping-cart"></i></a>
+      <div class="small-cart">
         <ul>
           <h3>In cart</h3>
           <li class="pt-1 pb-1" *ngFor="let item of items">
@@ -29,7 +29,7 @@
             {{item.amount}}x {{item.movie.name}}
           </li>
         </ul>
-        <a routerLink="/cart" (click)="status=!status"  routerLinkActive=”active”>Checkout</a>
+        <a class="checkout-link" routerLink="/cart" routerLinkActive=”active”>Checkout</a>
       </div>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search movies" aria-label="Search">
