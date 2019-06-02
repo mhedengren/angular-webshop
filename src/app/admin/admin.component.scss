@@ -1,95 +1,92 @@
 table {
-    color: #fff;
-    //box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
-    font-family: Arial, Helvetica, sans-serif;
-    max-width: 90%;
-    margin: 0 auto;
- 
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 90%;
+  margin: 0 auto;
+
 }
 
 .table td {
-    border: none;
+  border: none;
 }
 
 .table th {
-    border: none;
+  border: none;
 
 }
+
 thead {
-    background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.05);
 
 }
 
 td,
 th,
 thead button {
-    vertical-align: baseline;
+  vertical-align: baseline;
 }
 
-
-
 button {
-    background: lightcoral;
-    color: white;
-    padding: .25rem .5rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: .8em;
-    width: 100%;
+  background: lightcoral;
+  color: white;
+  padding: .25rem .5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: .8em;
+  width: 100%;
 
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(0, 0, 0, .15)
+  background-color: rgba(0, 0, 0, .15)
 }
-
 
 @media screen and (max-width: 575px) {
 
-    .table-xs-responsive th,
-    .table-xs-responsive td {
-        width: 100% !important;
-        display: block !important;
-        box-sizing: border-box;
-    }
+  .table-xs-responsive th,
+  .table-xs-responsive td {
+    width: 100% !important;
+    display: block !important;
+    box-sizing: border-box;
+  }
 }
 
 @media screen and (max-width: 767px) {
 
-    .table.table-sm-responsive th,
-    .table.table-sm-responsive td {
-        width: 100% !important;
-        display: block !important;
-        box-sizing: border-box;
-    }
+  .table.table-sm-responsive th,
+  .table.table-sm-responsive td {
+    width: 100% !important;
+    display: block !important;
+    box-sizing: border-box;
+  }
 }
 
 @media screen and (max-width: 992px) {
 
-    .table.table-md-responsive th,
-    .table.table-md-responsive td {
-        width: 100% !important;
-        display: block !important;
-        box-sizing: border-box;
-    }
+  .table.table-md-responsive th,
+  .table.table-md-responsive td {
+    width: 100% !important;
+    display: block !important;
+    box-sizing: border-box;
+  }
 
 }
 
 @media screen and (max-width: 1200px) {
 
-    .table.table-sm-responsive th,
-    .table.table-sm-responsive td {
-        width: 100% !important;
-        display: block !important;
-        box-sizing: border-box;
-    }
+  .table.table-sm-responsive th,
+  .table.table-sm-responsive td {
+    width: 100% !important;
+    display: block !important;
+    box-sizing: border-box;
+  }
 
 }
 
 @media screen and (min-width: 992px) {
 
-    td,
-    th {
-        padding: 25px;
-    }
+  td,
+  th {
+    padding: 25px;
+  }
 }

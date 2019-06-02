@@ -1,31 +1,31 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { DetailsComponent } from './details.component';
-import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { ActivatedRouteStub } from 'src/testing/activated-route-stub';
-import { DataService } from '../services/data.service';
-import { MockDataService } from '../services/mock-data.service';
-import { RouterTestingModule } from '@angular/router/testing';
-import { Component } from '@angular/core';
-import { IMovie } from '../interfaces/IMovie';
+import { DetailsComponent } from "./details.component";
+import { RouterModule } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
+import { ActivatedRouteStub } from "src/testing/activated-route-stub";
+import { DataService } from "../services/data.service";
+import { MockDataService } from "../services/mock-data.service";
+import { RouterTestingModule } from "@angular/router/testing";
+import { Component } from "@angular/core";
+import { IMovie } from "../interfaces/IMovie";
 
-
-describe('DetailsComponent', () => {
+describe("DetailsComponent", () => {
   let component: DetailsComponent;
   let fixture: ComponentFixture<DetailsComponent>;
 
-  let activatedRoute = new ActivatedRouteStub({id: 1});
+  let activatedRoute = new ActivatedRouteStub({ id: 1 });
 
   beforeEach(async(() => {
-    activatedRoute.setParamMap({id: 1});
+    activatedRoute.setParamMap({ id: 1 });
     TestBed.configureTestingModule({
-      declarations: [ DetailsComponent ],
+      declarations: [DetailsComponent],
       imports: [RouterTestingModule.withRoutes([]), HttpClientModule],
-      providers: [{provide: activatedRoute, useValue: activatedRoute},
-                  {provide: DataService, useClass: MockDataService}]
-    })
-    .compileComponents();
+      providers: [
+        { provide: activatedRoute, useValue: activatedRoute },
+        { provide: DataService, useClass: MockDataService }
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -34,13 +34,11 @@ describe('DetailsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 
-  it('should receive 1 movie', () => {
-    expect(component.movie.name).toBe('The Dark Knight');
+  it("should receive 1 movie", () => {
+    expect(component.movie.name).toBe("The Dark Knight");
   });
-
-
 });

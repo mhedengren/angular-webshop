@@ -1,41 +1,39 @@
 <header class="sticky-top">
   <nav class="navbar navbar-expand-md bg-dark navbar-light">
     <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">MovieCore</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+      <a class="navbar-brand" routerLink="/">MovieCore</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
             <a class="nav-link" routerLink="/movies" routerLinkActive=”active”>Movies</a>
-        </li>
-        <!-- <li class="nav-item">
-          <a class="nav-link" routerLink="/checkout" routerLinkActive=”active”>Checkout</a>
-        </li> -->
-        <li class="nav-item">
-          <a class="nav-link d-md-none" routerLink="/cart" routerLinkActive=”active”>Cart</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link"routerLink="/admin" routerLinkActive=”active”>Admin</a>
-        </li>
-      </ul>
-      <a class="cart d-none d-md-block" routerLinkActive=”active”>{{totalItemCount}} <i class="fas fa-shopping-cart"></i></a>
-      <div class="small-cart">
-        <ul>
-          <h3>In cart</h3>
-          <li class="pt-1 pb-1" *ngFor="let item of items">
-              <img src="{{item.movie.imageUrl}}" alt="">
-            {{item.amount}}x {{item.movie.name}}
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-md-none" routerLink="/cart" routerLinkActive=”active”>Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin" routerLinkActive=”active”>Admin</a>
           </li>
         </ul>
-        <a class="checkout-link" routerLink="/cart" routerLinkActive=”active”>Checkout</a>
+        <a class="cart d-none d-md-block" href="#">{{totalItemCount}} <i class="fas fa-shopping-cart"></i></a>
+        <div class="small-cart">
+          <ul>
+            <h3>In cart</h3>
+            <li class="pt-1 pb-1" *ngFor="let item of items">
+              <img src="{{item.movie.imageUrl}}" alt="">
+              {{item.amount}}x {{item.movie.name}}
+            </li>
+          </ul>
+          <a class="checkout-link" routerLink="/cart" routerLinkActive=”active”>Checkout</a>
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search movies" aria-label="Search">
+          <button class="btn my-2 my-sm-0" type="submit">Search</button>
+        </form>
       </div>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search movies" aria-label="Search">
-        <button class="btn my-2 my-sm-0" type="submit">Search</button>
-      </form>
     </div>
-  </div>
   </nav>
 </header>

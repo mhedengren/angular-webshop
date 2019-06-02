@@ -1,58 +1,47 @@
-.bg {
-  //background:rgba(0, 0, 0, 0.15);
-}
-
-
 .form-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 500px;
   padding: 4rem;
- 
+
 }
 
 .checkout-form {
-    //background:rgba(0, 0, 0, 0.15);
 
+  .form-group {
+    margin: 1.5rem 0;
+  }
 
-    .form-group {
-      margin: 1.5rem 0;
-    }
+  .gray {
+    background-color: rgb(179, 179, 179);
+  }
 
-    .gray {
-      background-color: rgb(179, 179, 179);
-    }
+  input {
+    color: #333;
+    border: none;
+    background-color: #fafafa;
+    padding: 0 16px;
+    width: 300px !important;
+    -webkit-appearance: none;
+  }
 
-    input {
-        color: #333;
-        border: none;
-        background-color: #fafafa;
-        padding: 0 16px;
-        width: 300px !important;
-        -webkit-appearance: none;
-     }
+  button {
+    margin-top: 1rem;
+    padding: 13px 24px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    transition-property: all;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
 
-     button {
-        margin-top: 1rem;
-        padding: 13px 24px;
-        color: #ffffff;
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 24px;
-        border: 0;
-        border-radius: 5px;
-        background-color: #4CAF50;
-        transition-property: all;
-        transition-duration: 0.15s;
-        transition-timing-function: ease-in-out;
-        
-        // &:hover {
-        //   background-color: #9bd57b;
-        // }
-      }
+  }
 }
-
 
 .products-container {
   display: flex;
@@ -73,7 +62,7 @@
     color: lightblue;
   }
 
-  ul{
+  ul {
     list-style-type: none;
 
     li {
@@ -92,6 +81,7 @@
     width: 25px;
     height: 25px;
   }
+
   .decrease {
     background-color: rgb(179, 179, 179);
     color: #fff;
@@ -100,7 +90,7 @@
     height: 25px;
   }
 
-  img{
+  img {
     max-height: 50px;
     margin: 5px;
   }
@@ -109,5 +99,5 @@
     overflow: scroll;
   }
 
-   
+
 }

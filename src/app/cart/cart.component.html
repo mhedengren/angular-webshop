@@ -1,50 +1,42 @@
 <h1 class="text-center mt-5 mb-3">Checkout</h1>
 <section id="checkout" class="row mt-2 justify-content-center">
-    <div class="col-11 form-wrapper col-md-6 col-xl-5 mb-5 order-2 bg order-md-1">
-        <!-- Form -->
-        <form [formGroup]="myForm" class="checkout-form" (ngSubmit)="orderComplete()">
-            <h2 class="text-center p-0 mb-4">Details</h2>
-            <!-- <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter your name">
-            </div> -->
-            <div class="form-group">
-                <label for="name">Email</label>
-                <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter your email">
-            </div>
-            <div class="form-group">
-                <label for="payment-method">Payment Method</label>
-                <select formControlName="paymentControl" class="form-control">
-                    <option [value]="method" *ngFor="let method of paymentMethods">{{method}}</option>
-                </select>
-            </div>
-            <div class="button-wrapper text-center">
-                <button type="submit" [class.gray]="!myForm.valid" [disabled]="!myForm.valid">Confirm</button>
-            </div>
-        </form>
+    <!--Form column-->
+  <div class="col-11 form-wrapper col-md-6 col-xl-5 mb-5 order-2 order-md-1">
+    <form [formGroup]="myForm" class="checkout-form" (ngSubmit)="orderComplete()">
+      <h2 class="text-center p-0 mb-4">Details</h2>
+      <div class="form-group">
+        <label for="name">Email</label>
+        <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="payment-method">Payment Method</label>
+        <select formControlName="paymentControl" class="form-control">
+          <option [value]="method" *ngFor="let method of paymentMethods">{{method}}</option>
+        </select>
+      </div>
+      <div class="button-wrapper text-center">
+        <button type="submit" [class.gray]="!myForm.valid" [disabled]="!myForm.valid">Confirm</button>
+      </div>
+    </form>
+  </div>
+  <!--Cart column-->
+  <div class="col-11 col-md-6 col-xl-5 products-container order-1 order-md-2">
+    <div class="order-summary mb-4">
+      <h2 class="text-center mb-2" *ngIf="totalPrice">{{totalPrice}} ;-</h2>
     </div>
-
-    <div class="col-11 col-md-6 col-xl-5 products-container bg order-1 order-md-2">
-        <div class="order-summary mb-4">
-            <!-- <h2 class="text-center">Total Price:</h2> -->
-            <h2 class="text-center mb-2" *ngIf="totalPrice">{{totalPrice}} ;-</h2>
-            <!-- <h3 class="text-center" *ngIf="totalPrice"><span>{{totalPrice}} ;-</span></h3> -->
-            <!-- <h5>{{myForm.value.name}}</h5> -->
-           
-        </div>
-        <div class="products">
-            <ul class="p-0">
-                <li *ngFor="let item of items">
-                    <button class="increase" (click)="increaseAmount(item.movie)">+</button>
-                    <button class="decrease" (click)="decreaseAmount(item.movie)">-</button>
-                    <img src="{{item.movie.imageUrl}}" alt="{{item.movie.name}}">
-                    {{item.amount}}x {{item.movie.name}}
-                </li>
-            </ul>
-        </div>
-        <div class="delivery-info">
-        <h5 class="pt-4">Deliver to: <span>{{myForm.value.email}}</span></h5>
-        <h5>Payment method: <span>{{myForm.value.paymentControl}}</span></h5>
-         </div>
+    <div class="products">
+      <ul class="p-0">
+        <li *ngFor="let item of items">
+          <button class="increase" (click)="increaseAmount(item.movie)">+</button>
+          <button class="decrease" (click)="decreaseAmount(item.movie)">-</button>
+          <img src="{{item.movie.imageUrl}}" alt="{{item.movie.name}}">
+          {{item.amount}}x {{item.movie.name}}
+        </li>
+      </ul>
     </div>
+    <div class="delivery-info">
+      <h5 class="pt-4">Deliver to: <span>{{myForm.value.email}}</span></h5>
+      <h5>Payment method: <span>{{myForm.value.paymentControl}}</span></h5>
+    </div>
+  </div>
 </section>

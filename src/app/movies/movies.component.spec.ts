@@ -1,22 +1,26 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { MoviesComponent } from './movies.component';
-import { MockDataService } from '../services/mock-data.service';
-import { DataService } from '../services/data.service';
-import { DisplayMovieComponent } from '../display-movie/display-movie.component';
-import { RouterModule } from '@angular/router';
+import { MoviesComponent } from "./movies.component";
+import { MockDataService } from "../services/mock-data.service";
+import { DataService } from "../services/data.service";
+import { DisplayMovieComponent } from "../display-movie/display-movie.component";
+import { RouterModule } from "@angular/router";
 
-describe('MoviesComponent', () => {
+describe("MoviesComponent", () => {
   let component: MoviesComponent;
   let fixture: ComponentFixture<MoviesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MoviesComponent, DisplayMovieComponent ],
+      declarations: [MoviesComponent, DisplayMovieComponent],
       imports: [RouterModule.forRoot([])]
     })
-    .overrideComponent(MoviesComponent, { set: { providers: [ {provide: DataService, useClass: MockDataService}]}})
-    .compileComponents();
+      .overrideComponent(MoviesComponent, {
+        set: {
+          providers: [{ provide: DataService, useClass: MockDataService }]
+        }
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -25,11 +29,11 @@ describe('MoviesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 
-  it('should contain 4 movies', () => {
+  it("should contain 4 movies", () => {
     expect(component.movies.length).toBe(4);
   });
 });
