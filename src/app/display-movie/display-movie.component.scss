@@ -5,6 +5,14 @@
   transition: .5s;
   background-color: transparent;
 
+
+  img {
+    min-height: 350px;
+    max-height: 350px;
+    object-fit: cover;
+    object-position: 50% 0;
+  }
+
 }
 
 h2 {
@@ -44,8 +52,8 @@ button {
   }
 
   img {
-    min-height: 400px;
-    max-height: 400px;
+    min-height: 400px !important;
+    max-height: 400px !important;
     object-fit: cover;
     object-position: 50% 0;
   }

@@ -59,6 +59,7 @@ export class CartComponent implements OnInit {
     if (this.items.length) {
       this.dataservice.postOrder(newOrder).subscribe();
       this.items = this.cartservice.emptyCart();
+      //this.totalPrice = 0;
     } else {
       return false;
     }

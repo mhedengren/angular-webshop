@@ -35,8 +35,8 @@
       </ul>
     </div>
     <div class="delivery-info">
-      <h5 class="pt-4">Deliver to: <span>{{myForm.value.email}}</span></h5>
-      <h5>Payment method: <span>{{myForm.value.paymentControl}}</span></h5>
+      <h5 *ngIf="totalPrice" class="pt-4">Deliver to: <span>{{myForm.value.email}}</span></h5>
+      <h5 *ngIf="totalPrice" >Payment method: <span>{{myForm.value.paymentControl}}</span></h5>
     </div>
   </div>
 </section>
