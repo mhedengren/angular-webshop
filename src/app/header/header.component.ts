@@ -1,39 +1,65 @@
-import { Component, OnInit } from '@angular/core';
-import { CartService } from '../services/cart.service';
-import { ICartItem } from '../interfaces/ICartItem';
+import { Component, OnInit } from "@angular/core";
+import { CartService } from "../services/cart.service";
+import { ICartItem } from "../interfaces/ICartItem";
+import { DataService } from '../services/data.service';
+import { IMovie } from '../interfaces/IMovie';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: "app-header",
+  templateUrl: "./header.component.html",
+  styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
-
   items: ICartItem[] = [];
   totalItemCount: number;
 
-  constructor(private cartservice: CartService) {
+  moviesFromSearch: IMovie[];
+  searchValue: string;
+
+  constructor(private cartservice: CartService, private dataservice: DataService) {}
+
+  getSuggestions(){
+    if (this.searchValue.length > 1){
+          this.dataservice.search(this.searchValue).subscribe(data => {
+            this.moviesFromSearch = data;
+            console.log(this.moviesFromSearch);
+          });
+        } else {
+          this.moviesFromSearch = [];
+          console.log(this.moviesFromSearch);
+        }
   }
 
+  // getSearchResult(event) {
+
+  //   if (event.target.value.length > 1){
+  //     this.dataservice.search(event.target.value).subscribe(data => {
+  //       this.moviesFromSearch = data;
+  //       console.log(this.moviesFromSearch);
+  //     });
+  //   } else {
+  //     this.moviesFromSearch = [];
+  //     console.log(this.moviesFromSearch);
+  //   }
+  
+  // }
+
   getTotalCount() {
-    this.totalItemCount = this.items.reduce((acc, { amount }) => acc + amount, 0);
+    this.totalItemCount = this.items.reduce(
+      (acc, { amount }) => acc + amount,
+      0
+    );
   }
 
   ngOnInit() {
 
-    // Will make an empty array for cart-items if local storage is empty
-    if (JSON.parse(localStorage.getItem('cart')) === null){
-      localStorage.setItem('cart', JSON.stringify(this.items));
-    }
     this.cartservice.getCart();
-    this.items = JSON.parse(localStorage.getItem('cart'));
+    this.items = JSON.parse(localStorage.getItem("cart"));
     this.getTotalCount();
 
-    this.cartservice.currentShoppingCart.subscribe( cart => {
+    this.cartservice.currentShoppingCart.subscribe(cart => {
       this.items = cart;
       this.getTotalCount();
-   });
-
+    });
   }
-
 }

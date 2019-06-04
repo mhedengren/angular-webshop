@@ -10,6 +10,7 @@ import { IOrder } from '../interfaces/IOrder';
 export class MockDataService implements IDataService {
 
   order: IOrder = {id: 10, companyId: 2, created: '2011', createdBy: 'Melker', paymentMethod: 'Swish Jao', totalPrice: 199, status: 0, orderRows: [{productId:1, amount: 1}]}
+  orders: IOrder[]= [{id: 10, companyId: 2, created: '2011', createdBy: 'Melker', paymentMethod: 'Swish Jao', totalPrice: 199, status: 0, orderRows: [{productId:1, amount: 1}]}]
 
   movie: IMovie = {
     id: 1, name: 'The Dark Knight', description: 'abcd', price: 199,
@@ -52,6 +53,12 @@ export class MockDataService implements IDataService {
     return of(this.movie);
   }
   postOrder(order): Observable<IOrder> {
+    return of(this.order);
+  }
+  getOrders(): Observable<IOrder[]> {
+    return of(this.orders);
+  }
+  deleteOrder(id): Observable<IOrder> {
     return of(this.order);
   }
  
