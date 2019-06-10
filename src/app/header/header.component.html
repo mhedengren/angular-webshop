@@ -37,7 +37,7 @@
 
             <ul>
               <li *ngFor="let result of moviesFromSearch">
-                <a  (click)="empty()"[routerLink]="['/details', result.id]" routerLinkActive=”active”>{{result.name}}</a>
+                <a (click)="empty()"[routerLink]="['/details', result.id]" routerLinkActive=”active”>{{result.name}}</a>
               </li>
             </ul>
 

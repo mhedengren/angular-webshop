@@ -32,9 +32,9 @@ import { SearchResultComponent } from './search-result/search-result.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [CartService],
   bootstrap: [AppComponent]
