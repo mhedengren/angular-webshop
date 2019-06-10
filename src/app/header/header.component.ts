@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit {
         console.log(this.moviesFromSearch);
       });
     } else {
-      this.moviesFromSearch.length = 0;
+      this.moviesFromSearch = 0;
       console.log(this.moviesFromSearch);
     }
   }
