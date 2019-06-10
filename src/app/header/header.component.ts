@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { CartService } from "../services/cart.service";
 import { ICartItem } from "../interfaces/ICartItem";
-import { DataService } from '../services/data.service';
-import { IMovie } from '../interfaces/IMovie';
+import { DataService } from "../services/data.service";
+import { IMovie } from "../interfaces/IMovie";
 
 @Component({
   selector: "app-header",
@@ -16,18 +16,26 @@ export class HeaderComponent implements OnInit {
   moviesFromSearch: IMovie[];
   searchValue: string;
 
-  constructor(private cartservice: CartService, private dataservice: DataService) {}
+  constructor(
+    private cartservice: CartService,
+    private dataservice: DataService
+  ) {}
 
-  getSuggestions(){
-    if (this.searchValue.length > 1){
-          this.dataservice.search(this.searchValue).subscribe(data => {
-            this.moviesFromSearch = data;
-            console.log(this.moviesFromSearch);
-          });
-        } else {
-          this.moviesFromSearch = [];
-          console.log(this.moviesFromSearch);
-        }
+  emptySearch(){
+    this.searchValue = '';
+    this.moviesFromSearch = [];
+  }
+
+  getSearchResult() {
+    if (this.searchValue.length > 1) {
+      this.dataservice.search(this.searchValue).subscribe(data => {
+        this.moviesFromSearch = data;
+        console.log(this.moviesFromSearch);
+      });
+    } else {
+      this.moviesFromSearch.length = 0;
+      console.log(this.moviesFromSearch);
+    }
   }
 
   // getSearchResult(event) {
@@ -41,7 +49,7 @@ export class HeaderComponent implements OnInit {
   //     this.moviesFromSearch = [];
   //     console.log(this.moviesFromSearch);
   //   }
-  
+
   // }
 
   getTotalCount() {
@@ -52,7 +60,6 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.cartservice.getCart();
     this.items = JSON.parse(localStorage.getItem("cart"));
     this.getTotalCount();

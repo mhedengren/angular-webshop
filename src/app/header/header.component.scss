@@ -75,6 +75,7 @@ nav.scrolled .navbar-toggler-icon {
     width: 175px;
   }
 
+
 }
 
 @media screen and (min-width: 992px) {
@@ -88,16 +89,19 @@ nav.scrolled .navbar-toggler-icon {
     width: 200px;
     height: auto;
     padding: 1em;
+    z-index: -1;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
 
     ul {
       list-style-type: none;
       padding: 0;
 
       li {
-        margin: .25em 0;
+        margin: .5em 0;
 
         a {
-          color: #000 !important;
+          color: rgb(107, 107, 107) !important;
         }
       }
     }
