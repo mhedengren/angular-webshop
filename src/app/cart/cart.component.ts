@@ -27,6 +27,7 @@ export class CartComponent implements OnInit {
   paymentMethods = ["Klarna", "VISA / MasterCard", "Paypal", "Swish", "Other"];
   orderRows: IOrderRow[] = [];
 
+  // Form & Validation
   myForm = this.fb.group({
     email: ["", Validators.compose([Validators.email, Validators.required])],
     paymentControl: ["", Validators.required]
@@ -37,6 +38,7 @@ export class CartComponent implements OnInit {
   }
 
   orderComplete() {
+    // Remapping id & amount for order rows interface included in IOrder.
     for (let i = 0; i < this.items.length; i++) {
       const productId = this.items[i].movie.id;
       const amount = this.items[i].amount;
@@ -56,10 +58,11 @@ export class CartComponent implements OnInit {
       orderRows: this.orderRows
     };
 
+    // Will only post if items has been put in basket.
     if (this.items.length) {
       this.dataservice.postOrder(newOrder).subscribe();
       this.items = this.cartservice.emptyCart();
-      //this.totalPrice = 0;
+      this.totalPrice = 0;
     } else {
       return false;
     }

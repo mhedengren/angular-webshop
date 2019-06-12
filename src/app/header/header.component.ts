@@ -10,47 +10,31 @@ import { IMovie } from "../interfaces/IMovie";
   styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
-  items: ICartItem[] = [];
-  totalItemCount: number;
-
-  moviesFromSearch: IMovie[];
-  searchValue: string;
-
   constructor(
     private cartservice: CartService,
     private dataservice: DataService
   ) {}
 
-  emptySearch(){
-    this.searchValue = '';
+  items: ICartItem[] = [];
+  totalItemCount: number;
+  moviesFromSearch: IMovie[];
+  searchValue: string;
+
+  emptySearch() {
+    this.searchValue = "";
     this.moviesFromSearch = [];
   }
 
+  // Running on keydown in header search input.
   getSearchResult() {
     if (this.searchValue.length > 1) {
       this.dataservice.search(this.searchValue).subscribe(data => {
         this.moviesFromSearch = data;
-        console.log(this.moviesFromSearch);
       });
     } else {
-      this.moviesFromSearch = 0;
-      console.log(this.moviesFromSearch);
+      this.moviesFromSearch = [];
     }
   }
-
-  // getSearchResult(event) {
-
-  //   if (event.target.value.length > 1){
-  //     this.dataservice.search(event.target.value).subscribe(data => {
-  //       this.moviesFromSearch = data;
-  //       console.log(this.moviesFromSearch);
-  //     });
-  //   } else {
-  //     this.moviesFromSearch = [];
-  //     console.log(this.moviesFromSearch);
-  //   }
-
-  // }
 
   getTotalCount() {
     this.totalItemCount = this.items.reduce(

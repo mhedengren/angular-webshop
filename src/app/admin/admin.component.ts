@@ -12,12 +12,14 @@ export class AdminComponent implements OnInit {
   constructor(private dataservice: DataService) {}
 
   ngOnInit() {
+    // Access posted orders.
     this.dataservice.getOrders().subscribe(data => {
       this.orders = data;
     });
   }
 
   deleteOrder(order) {
+    // Deletes order from API & view.
     this.dataservice.deleteOrder(order.id).subscribe();
     for (let i = 0; i < this.orders.length; i++) {
       if (order.id === this.orders[i].id) {
