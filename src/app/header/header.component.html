@@ -33,16 +33,16 @@
           <input (keyup)="getSearchResult()" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}"
             class="form-control mr-sm-2" type="search" placeholder="Search movies" aria-label="Search">
           <button class="btn my-2 my-sm-0" type="submit">Search</button>
-          <div *ngIf="moviesFromSearch" class="result">
+          <div *ngIf="moviesFromSearch" class="d-none d-md-block result">
 
             <ul>
               <li *ngFor="let result of moviesFromSearch">
-                <a (click)="empty()"[routerLink]="['/details', result.id]" routerLinkActive=”active”>{{result.name}}</a>
+                <a (click)="empty()" [routerLink]="['/details', result.id]"
+                  routerLinkActive=”active”>{{result.name}}</a>
               </li>
             </ul>
 
           </div>
-          <!-- <app-search-result></app-search-result> -->
         </form>
       </div>
     </div>
