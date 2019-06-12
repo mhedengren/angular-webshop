@@ -14,7 +14,6 @@ import { DetailsComponent } from "./details/details.component";
 import { CartService } from "./services/cart.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AdminComponent } from "./admin/admin.component";
-import { SearchResultComponent } from './search-result/search-result.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +25,7 @@ import { SearchResultComponent } from './search-result/search-result.component';
     CartComponent,
     DisplayMovieComponent,
     DetailsComponent,
-    AdminComponent,
-    SearchResultComponent
+    AdminComponent
   ],
   imports: [
     BrowserModule,
