@@ -7,13 +7,13 @@ import { HttpClientModule } from "@angular/common/http";
 import { HeaderComponent } from "./header/header.component";
 import { HomeComponent } from "./home/home.component";
 import { MoviesComponent } from "./movies/movies.component";
-import { NotfoundComponent } from "./notfound/notfound.component";
 import { CartComponent } from "./cart/cart.component";
 import { DisplayMovieComponent } from "./display-movie/display-movie.component";
 import { DetailsComponent } from "./details/details.component";
 import { CartService } from "./services/cart.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AdminComponent } from "./admin/admin.component";
+import { NotfoundComponent } from "./notfound/notfound.component";
 
 @NgModule({
   declarations: [
@@ -21,11 +21,11 @@ import { AdminComponent } from "./admin/admin.component";
     HeaderComponent,
     HomeComponent,
     MoviesComponent,
-    NotfoundComponent,
     CartComponent,
     DisplayMovieComponent,
     DetailsComponent,
-    AdminComponent
+    AdminComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,

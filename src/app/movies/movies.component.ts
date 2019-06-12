@@ -10,7 +10,7 @@ import { MockDataService } from "../services/mock-data.service";
 })
 export class MoviesComponent implements OnInit {
   movies: IMovie[] = [];
-  categories: any[] = [];
+  categories: any[];
   constructor(private dataservice: DataService) {}
 
   addCategory() {
