@@ -4,6 +4,7 @@ import { CartService } from '../services/cart.service';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { APP_BASE_HREF } from '@angular/common';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -12,7 +13,9 @@ describe('HeaderComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [HeaderComponent],
-      providers: [CartService],
+      providers: [
+        { provide: APP_BASE_HREF, useValue : '/' }, CartService
+    ],
       imports: [FormsModule, HttpClientModule, RouterModule.forRoot([])]
     }).compileComponents();
   }));

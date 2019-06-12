@@ -9,8 +9,8 @@ import { MockDataService } from "../services/mock-data.service";
   styleUrls: ["./movies.component.scss"]
 })
 export class MoviesComponent implements OnInit {
-  movies: IMovie[];
-  categories: any[];
+  movies: IMovie[] = [];
+  categories: any[] = [];
   constructor(private dataservice: DataService) {}
 
   addCategory() {
@@ -19,7 +19,7 @@ export class MoviesComponent implements OnInit {
       for (let j = 0; j < this.movies[i].productCategory.length; j++) {
         for (let k = 0; k < this.categories.length; k++) {
           if (this.movies[i].productCategory[j].categoryId === this.categories[k].id) {
-            this.movies[i].productCategory[j].category = this.categories[k].name;
+            this.movies[i].productCategory[j].category = this.categories[k].name + ' ';
           }
         }
       }

@@ -17,13 +17,13 @@ export class HeaderComponent implements OnInit {
 
   items: ICartItem[] = [];
   totalItemCount: number;
-  moviesFromSearch: IMovie[];
+  moviesFromSearch: IMovie[] = [];
   searchValue: string;
 
-  emptySearch() {
-    this.searchValue = "";
-    this.moviesFromSearch = [];
-  }
+  // emptySearch() {
+  //   this.searchValue = "";
+  //   this.moviesFromSearch = [];
+  // }
 
   // Running on keydown in header search input.
   getSearchResult() {

@@ -5,6 +5,7 @@ import { MockDataService } from "../services/mock-data.service";
 import { DataService } from "../services/data.service";
 import { DisplayMovieComponent } from "../display-movie/display-movie.component";
 import { RouterModule } from "@angular/router";
+import { APP_BASE_HREF } from '@angular/common';
 
 describe("MoviesComponent", () => {
   let component: MoviesComponent;
@@ -13,7 +14,10 @@ describe("MoviesComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [MoviesComponent, DisplayMovieComponent],
-      imports: [RouterModule.forRoot([])]
+      imports: [RouterModule.forRoot([])],
+      providers: [
+        { provide: APP_BASE_HREF, useValue : '/' }
+    ]
     })
       .overrideComponent(MoviesComponent, {
         set: {

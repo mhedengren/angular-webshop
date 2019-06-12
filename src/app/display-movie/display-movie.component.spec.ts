@@ -5,6 +5,7 @@ import { Component } from "@angular/core";
 import { IMovie } from "../interfaces/IMovie";
 import { RouterModule } from "@angular/router";
 import { CartService } from "../services/cart.service";
+import { APP_BASE_HREF } from '@angular/common';
 
 describe("DisplayMovieComponent", () => {
   let testHostComponent: TestHostComponent;
@@ -13,7 +14,10 @@ describe("DisplayMovieComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [DisplayMovieComponent, MoviesComponent, TestHostComponent],
-      imports: [RouterModule.forRoot([])]
+      imports: [RouterModule.forRoot([])],
+      providers: [
+        { provide: APP_BASE_HREF, useValue : '/' }
+    ]
     }).compileComponents();
   }));
 
