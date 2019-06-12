@@ -11,6 +11,7 @@ export class MockDataService implements IDataService {
 
   order: IOrder = {id: 10, companyId: 2, created: '2011', createdBy: 'Melker', paymentMethod: 'Swish Jao', totalPrice: 199, status: 0, orderRows: [{productId:1, amount: 1}]}
   orders: IOrder[]= [{id: 10, companyId: 2, created: '2011', createdBy: 'Melker', paymentMethod: 'Swish Jao', totalPrice: 199, status: 0, orderRows: [{productId:1, amount: 1}]}]
+  categories: [{"id":5,"name":"Action"},{"id":6,"name":"Thriller"},{"id":7,"name":"Comedy"},{"id":8,"name":"Sci-fi"}];
 
   movie: IMovie = {
     id: 1, name: 'The Dark Knight', description: 'abcd', price: 199,
@@ -60,6 +61,9 @@ export class MockDataService implements IDataService {
   }
   deleteOrder(id): Observable<IOrder> {
     return of(this.order);
+  }
+  getCategory(): Observable<any[]> {
+    return of(this.categories);
   }
  
   constructor() { }
