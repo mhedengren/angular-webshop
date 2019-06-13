@@ -31,6 +31,8 @@ export class MoviesComponent implements OnInit {
       this.movies = data;
 
       this.dataservice.getCategory().subscribe(category => {
+        console.log('Got categories: ', category);
+        
         this.categories = category;
 
         this.addCategory();

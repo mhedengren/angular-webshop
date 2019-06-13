@@ -95,6 +95,7 @@ nav.scrolled .navbar-toggler-icon {
     img {
       width: 40px;
       max-height: 60px;
+      margin-right: .25em;
     }
 
     ul {
@@ -113,8 +114,16 @@ nav.scrolled .navbar-toggler-icon {
           background: #fafafa;
         }
 
+        &:hover {
+          background:#eeeeee;
+        }
+
         a {
           color: rgb(107, 107, 107) !important;
+
+          &:hover {
+            text-decoration: none;
+          }
         }
       }
     }

@@ -4,8 +4,6 @@ import { MoviesComponent } from './movies.component';
 import { MockDataService } from '../services/mock-data.service';
 import { DataService } from '../services/data.service';
 import { DisplayMovieComponent } from '../display-movie/display-movie.component';
-import { RouterModule } from '@angular/router';
-import { APP_BASE_HREF } from '@angular/common';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('MoviesComponent', () => {
