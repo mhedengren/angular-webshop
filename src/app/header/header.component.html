@@ -18,7 +18,7 @@
             <a class="nav-link" [routerLink]="['admin']" routerLinkActive=”active”>Admin</a>
           </li>
         </ul>
-        <a class="cart d-none d-md-block" href="#">{{totalItemCount}} <i class="fas fa-shopping-cart"></i></a>
+        <a class="cart d-none d-md-block" href="#"><span></span>{{totalItemCount}} <i class="fas fa-shopping-cart"></i></a>
         <div class="small-cart">
           <ul>
             <h3>In cart</h3>
@@ -38,7 +38,7 @@
             <ul>
               <li *ngFor="let result of moviesFromSearch">
                 <a [routerLink]="['/details', result.id]"
-                  routerLinkActive=”active”>{{result.name}}</a>
+                  routerLinkActive=”active”><img src="{{result.imageUrl}}" alt="{{result.name}}"> {{result.name}} </a>
               </li>
             </ul>
 
