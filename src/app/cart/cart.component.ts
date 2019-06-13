@@ -7,6 +7,7 @@ import { DataService } from '../services/data.service';
 import { IOrder } from '../interfaces/IOrder';
 import * as moment from 'moment';
 import { IOrderRow } from '../interfaces/IOrderRow';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -17,7 +18,8 @@ export class CartComponent implements OnInit {
   constructor(
     private cartservice: CartService,
     private fb: FormBuilder,
-    private dataservice: DataService
+    private dataservice: DataService,
+    private router: Router
   ) {
     this.items = cartservice.getCart();
   }
@@ -63,6 +65,7 @@ export class CartComponent implements OnInit {
       this.dataservice.postOrder(newOrder).subscribe();
       this.items = this.cartservice.emptyCart();
       this.totalPrice = 0;
+      this.router.navigate(['/thank-you']);
     } else {
       return false;
     }

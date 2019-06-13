@@ -14,6 +14,7 @@ import { CartService } from './services/cart.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { ThankYouComponent } from './thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     DisplayMovieComponent,
     DetailsComponent,
     AdminComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,

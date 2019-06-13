@@ -20,11 +20,6 @@ export class HeaderComponent implements OnInit {
   moviesFromSearch: IMovie[] = [];
   searchValue: string;
 
-  // emptySearch() {
-  //   this.searchValue = "";
-  //   this.moviesFromSearch = [];
-  // }
-
   // Running on keydown in header search input.
   getSearchResult() {
     if (this.searchValue.length > 1) {
