@@ -1,17 +1,17 @@
-import { Component, OnInit } from "@angular/core";
-import { CartService } from "../services/cart.service";
-import { ICartItem } from "../interfaces/ICartItem";
-import { FormBuilder } from "@angular/forms";
-import { Validators } from "@angular/forms";
-import { DataService } from "../services/data.service";
-import { IOrder } from "../interfaces/IOrder";
-import * as moment from "moment";
-import { IOrderRow } from "../interfaces/IOrderRow";
+import { Component, OnInit } from '@angular/core';
+import { CartService } from '../services/cart.service';
+import { ICartItem } from '../interfaces/ICartItem';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
+import { DataService } from '../services/data.service';
+import { IOrder } from '../interfaces/IOrder';
+import * as moment from 'moment';
+import { IOrderRow } from '../interfaces/IOrderRow';
 
 @Component({
-  selector: "app-cart",
-  templateUrl: "./cart.component.html",
-  styleUrls: ["./cart.component.scss"]
+  selector: 'app-cart',
+  templateUrl: './cart.component.html',
+  styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
   constructor(
@@ -24,13 +24,13 @@ export class CartComponent implements OnInit {
 
   items: ICartItem[] = [];
   totalPrice: number;
-  paymentMethods = ["Klarna", "VISA / MasterCard", "Paypal", "Swish", "Other"];
+  paymentMethods = ['Klarna', 'VISA / MasterCard', 'Paypal', 'Swish', 'Other'];
   orderRows: IOrderRow[] = [];
 
   // Form & Validation
   myForm = this.fb.group({
-    email: ["", Validators.compose([Validators.email, Validators.required])],
-    paymentControl: ["", Validators.required]
+    email: ['', Validators.compose([Validators.email, Validators.required])],
+    paymentControl: ['', Validators.required]
   });
 
   ngOnInit() {
@@ -49,10 +49,10 @@ export class CartComponent implements OnInit {
       id: 0,
       companyId: 2,
       created: moment()
-        .add(2, "hours")
+        .add(2, 'hours')
         .format(),
-      createdBy: this.myForm.get("email").value,
-      paymentMethod: this.myForm.get("paymentControl").value,
+      createdBy: this.myForm.get('email').value,
+      paymentMethod: this.myForm.get('paymentControl').value,
       totalPrice: this.totalPrice,
       status: 0,
       orderRows: this.orderRows

@@ -1,23 +1,18 @@
-import { async, ComponentFixture, TestBed } from "@angular/core/testing";
-import { DisplayMovieComponent } from "./display-movie.component";
-import { MoviesComponent } from "../movies/movies.component";
-import { Component } from "@angular/core";
-import { IMovie } from "../interfaces/IMovie";
-import { RouterModule } from "@angular/router";
-import { CartService } from "../services/cart.service";
-import { APP_BASE_HREF } from '@angular/common';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { DisplayMovieComponent } from './display-movie.component';
+import { MoviesComponent } from '../movies/movies.component';
+import { Component } from '@angular/core';
+import { IMovie } from '../interfaces/IMovie';
+import { RouterTestingModule } from '@angular/router/testing';
 
-describe("DisplayMovieComponent", () => {
+describe('DisplayMovieComponent', () => {
   let testHostComponent: TestHostComponent;
   let testHostFixture: ComponentFixture<TestHostComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [DisplayMovieComponent, MoviesComponent, TestHostComponent],
-      imports: [RouterModule.forRoot([])],
-      providers: [
-        { provide: APP_BASE_HREF, useValue : '/' }
-    ]
+      imports: [RouterTestingModule]
     }).compileComponents();
   }));
 
@@ -27,7 +22,7 @@ describe("DisplayMovieComponent", () => {
     testHostFixture.detectChanges();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(testHostComponent).toBeTruthy();
   });
 

@@ -3,6 +3,8 @@ import { CartComponent } from "./cart.component";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { MockDataService } from "../services/mock-data.service";
 import { HttpClientModule } from "@angular/common/http";
+import { RouterTestingModule } from '@angular/router/testing';
+import { DataService } from '../services/data.service';
 
 describe("CartComponent", () => {
   let component: CartComponent;
@@ -11,8 +13,14 @@ describe("CartComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [CartComponent],
-      imports: [ReactiveFormsModule, FormsModule, HttpClientModule]
-    }).compileComponents();
+      imports: [ReactiveFormsModule, FormsModule, HttpClientModule, RouterTestingModule]
+    })
+      .overrideComponent(CartComponent, {
+        set: {
+          providers: [{ provide: DataService, useClass: MockDataService }]
+        }
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {
