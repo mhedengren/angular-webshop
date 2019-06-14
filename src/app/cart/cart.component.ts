@@ -67,6 +67,7 @@ export class CartComponent implements OnInit {
       this.totalPrice = 0;
       this.router.navigate(['/thank-you']);
     } else {
+      alert('Please add something before placing an order!');
       return false;
     }
   }
