@@ -49,6 +49,7 @@ export class HeaderComponent implements OnInit {
     // Get cart array and total item count.
     this.cartservice.getCart();
 
+    // If local storage is null, initialize empty-array.
     if (localStorage.getItem('cart-moviecore') == null) {
       localStorage.setItem('cart-moviecore', JSON.stringify(this.items));
     }
