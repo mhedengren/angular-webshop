@@ -73,24 +73,6 @@ nav.scrolled span {
 // Tablet.
 @media screen and (min-width: 768px) {
 
-  .cart {
-    padding: 0 2rem;
-    font-size: 1em;
-  }
-
-  nav {
-    padding: 1rem 0;
-  }
-
-  input[type=search] {
-    width: 175px;
-  }
-
-}
-
-// Desktop.
-@media screen and (min-width: 992px) {
-
   .result {
     position: absolute;
     top: 55px;
@@ -143,6 +125,24 @@ nav.scrolled span {
       }
     }
   }
+
+  .cart {
+    padding: 0 2rem;
+    font-size: 1em;
+  }
+
+  nav {
+    padding: 1rem 0;
+  }
+
+  input[type=search] {
+    width: 175px;
+  }
+
+}
+
+// Desktop.
+@media screen and (min-width: 992px) {
 
   input[type=search] {
     width: auto;
