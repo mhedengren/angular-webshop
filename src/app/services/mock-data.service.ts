@@ -63,10 +63,7 @@ export class MockDataService implements IDataService {
     return of(this.order);
   }
   getCategory(): Observable<any[]> {
-    console.log('Getting categories: ', this.categories);
-    
     return of(this.categories);
   }
- 
   constructor() { }
 }

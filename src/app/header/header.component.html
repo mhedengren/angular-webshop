@@ -18,7 +18,7 @@
             <a class="nav-link" [routerLink]="['admin']" routerLinkActive=”active”>Admin</a>
           </li>
         </ul>
-        <span class="cart">{{totalItemCount}} <i class="fas fa-shopping-cart"></i></span>
+        <span class="d-none d-md-block cart">{{totalItemCount}} <i class="fas fa-shopping-cart"></i></span>
         <div class="small-cart">
           <ul>
             <h3>In cart</h3>
@@ -30,14 +30,15 @@
           <a class="checkout-link" [routerLink]="['cart']" routerLinkActive=”active”>Checkout</a>
         </div>
         <form class="form-inline my-2 my-lg-0">
-          <input (keyup)="getSearchResult()" [(ngModel)]="searchValue" [ngModelOptions]="{standalone: true}"
-            class="form-control mr-sm-2" type="search" placeholder="Search movies" aria-label="Search">
+          <input type="search" (keyup)="getSearchResult()" [(ngModel)]="searchValue"
+            [ngModelOptions]="{standalone: true}" class="form-control mr-sm-2" type="search" placeholder="Search movies"
+            aria-label="Search">
           <button class="btn my-2 my-sm-0" type="submit">Search</button>
-          <div *ngIf="moviesFromSearch?.length > 0" class="d-none d-md-block result">
-
+          <div *ngIf="showSearchResult" (clickOutside)="hide()" class="d-none d-md-block result">
+            <p class="m-0" *ngIf="moviesFromSearch.length === 0">No matches...</p>
             <ul>
               <li *ngFor="let result of moviesFromSearch">
-                <a (click)="!moviesFromSearch" [routerLink]="['/details', result.id]" routerLinkActive=”active”><img
+                <a (click)="hide()" [routerLink]="['/details', result.id]" routerLinkActive=”active”><img
                     src="{{result.imageUrl}}" alt="{{result.name}}"> {{result.name}} </a>
               </li>
             </ul>

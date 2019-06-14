@@ -19,15 +19,22 @@ export class HeaderComponent implements OnInit {
   totalItemCount: number;
   moviesFromSearch: IMovie[] = [];
   searchValue: string;
+  showSearchResult: boolean;
+
+  hide() {
+    this.showSearchResult = false;
+  }
 
   // Running on keydown in header search input.
   getSearchResult() {
+    this.showSearchResult = true;
     if (this.searchValue.length > 1) {
       this.dataservice.search(this.searchValue).subscribe(data => {
         this.moviesFromSearch = data;
       });
     } else {
       this.moviesFromSearch = [];
+      this.showSearchResult = false;
     }
   }
 

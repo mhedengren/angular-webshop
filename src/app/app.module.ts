@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminComponent } from './admin/admin.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { ThankYouComponent } from './thank-you/thank-you.component';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ThankYouComponent } from './thank-you/thank-you.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ClickOutsideModule
   ],
   providers: [CartService],
   bootstrap: [AppComponent]
