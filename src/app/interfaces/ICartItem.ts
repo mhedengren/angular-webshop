@@ -1,7 +1,6 @@
-import { IMovie } from './IMovie';
+import { IMovie } from "./IMovie";
 
 export interface ICartItem {
-   movie: IMovie;
-   amount: number;
-
+  movie: IMovie;
+  amount: number;
 }

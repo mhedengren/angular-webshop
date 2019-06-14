@@ -9,8 +9,8 @@ import { IOrder } from '../interfaces/IOrder';
 })
 export class MockDataService implements IDataService {
 
-  order: IOrder = {id: 10, companyId: 2, created: '2011', createdBy: 'Melker', paymentMethod: 'Swish Jao', totalPrice: 199, status: 0, orderRows: [{productId:1, amount: 1}]}
-  orders: IOrder[]= [{id: 10, companyId: 2, created: '2011', createdBy: 'Melker', paymentMethod: 'Swish Jao', totalPrice: 199, status: 0, orderRows: [{productId:1, amount: 1}]}]
+  order: IOrder = {id: 10, companyId: 2, created: '2011', createdBy: 'Melker', paymentMethod: 'Swish Jao', totalPrice: 199, status: 0, orderRows: [{productId:1, amount: 1}]};
+  orders: IOrder[] = [{id: 10, companyId: 2, created: '2011', createdBy: 'Melker', paymentMethod: 'Swish Jao', totalPrice: 199, status: 0, orderRows: [{productId: 1, amount: 1}]}];
   categories = [{"id":5,"name":"Action"},{"id":6,"name":"Thriller"},{"id":7,"name":"Comedy"},{"id":8,"name":"Sci-fi"}];
 
   movie: IMovie = {

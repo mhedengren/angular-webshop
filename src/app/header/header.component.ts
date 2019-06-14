@@ -46,6 +46,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Get cart array and total item count.
     this.cartservice.getCart();
     this.items = JSON.parse(localStorage.getItem('cart'));
     this.getTotalCount();
