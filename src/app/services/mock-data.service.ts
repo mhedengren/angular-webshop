@@ -56,6 +56,9 @@ export class MockDataService implements IDataService {
   postOrder(order): Observable<IOrder> {
     return of(this.order);
   }
+  search(value): Observable<IMovie[]> {
+    return of(this.movies);
+  }
   getOrders(): Observable<IOrder[]> {
     return of(this.orders);
   }
