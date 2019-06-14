@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { CartService } from '../services/cart.service';
-import { ICartItem } from '../interfaces/ICartItem';
-import { DataService } from '../services/data.service';
-import { IMovie } from '../interfaces/IMovie';
+import { Component, OnInit } from "@angular/core";
+import { CartService } from "../services/cart.service";
+import { ICartItem } from "../interfaces/ICartItem";
+import { DataService } from "../services/data.service";
+import { IMovie } from "../interfaces/IMovie";
 
 @Component({
   selector: 'app-header',
@@ -48,7 +48,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     // Get cart array and total item count.
     this.cartservice.getCart();
-    this.items = JSON.parse(localStorage.getItem('cart'));
+
+    if (localStorage.getItem('cart-moviecore') == null) {
+      localStorage.setItem('cart-moviecore', JSON.stringify(this.items));
+    }
+    this.items = JSON.parse(localStorage.getItem('cart-moviecore'));
     this.getTotalCount();
 
     this.cartservice.currentShoppingCart.subscribe(cart => {

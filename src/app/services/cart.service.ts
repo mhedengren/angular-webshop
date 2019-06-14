@@ -29,7 +29,7 @@ export class CartService {
     if (!foundMovie) {
       this.cart.push({ movie, amount: 1 });
     }
-    localStorage.setItem('cart', JSON.stringify(this.cart));
+    localStorage.setItem('cart-moviecore', JSON.stringify(this.cart));
     // Forward it to the subject.
     this.cartSource.next(this.cart);
   }
@@ -45,20 +45,20 @@ export class CartService {
         this.cart.splice(i, 1);
       }
     }
-    localStorage.setItem('cart', JSON.stringify(this.cart));
+    localStorage.setItem('cart-moviecore', JSON.stringify(this.cart));
     // Forward it to the subject.
     this.cartSource.next(this.cart);
   }
 
   emptyCart() {
     this.cart.length = 0;
-    localStorage.setItem('cart', JSON.stringify(this.cart));
+    localStorage.setItem('cart-moviecore', JSON.stringify(this.cart));
     this.cartSource.next(this.cart);
     return this.cart;
   }
 
   getCart(): ICartItem[] {
-    this.cart = JSON.parse(localStorage.getItem('cart')) || [];
+    this.cart = JSON.parse(localStorage.getItem('cart-moviecore')) || [];
     return this.cart;
   }
 }
