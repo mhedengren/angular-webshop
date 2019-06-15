@@ -26,6 +26,11 @@ input:focus::-webkit-input-placeholder { color:transparent; }
 
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
 .background-sky {
 
     background: #141E30;  /* fallback for old browsers */
