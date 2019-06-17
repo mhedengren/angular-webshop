@@ -1,0 +1,23 @@
+<div class="container">
+<h1 class="text-center mt-5 mb-5">Orders</h1>
+<table class="table table-striped table-md-responsive" aria-role="table">
+    <thead>
+        <th scope="col">#</th>
+        <th scope="col">Placed</th>
+        <th scope="col">By</th>
+        <th scope="col">PaymentMethod</th>
+        <th scope="col">Total</th>
+        <th scope="col">Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of orders">
+            <th scope="row">{{ order?.id }}</th>
+            <td>{{ order?.created }}</td>
+            <td>{{ order?.createdBy }}</td>
+            <td>{{ order?.paymentMethod }}</td>
+            <td>{{ order?.totalPrice }}</td>
+            <td><button (click)="deleteOrder(order)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>

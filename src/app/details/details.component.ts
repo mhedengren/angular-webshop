@@ -10,56 +10,36 @@ import { CartService } from '../services/cart.service';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss']
 })
-
 export class DetailsComponent implements OnInit {
-
   movie: IMovie;
 
   constructor(
     private route: ActivatedRoute,
     private dataservice: DataService,
     private cartservice: CartService,
-    private router: Router ) {
-  }
+    private router: Router
+  ) {}
 
-  addToCart(movie){
+  addToCart(movie) {
     this.cartservice.addMovie(movie);
-    //localStorage.setItem('cart', JSON.stringify(movie));
   }
 
   ngOnInit(): void {
-      this.route.paramMap.subscribe(pmap => {
-          const id = pmap.get('id');
+    // Subscribe to router param and match it with corresponding movie id.
+    this.route.paramMap.subscribe(pmap => {
+      const id = pmap.get('id');
 
-          this.dataservice.getMovie(id).subscribe(data => {
-            this.movie = data;
-        });
+      this.dataservice.getMovie(id).subscribe(data => {
+        this.movie = data;
       });
+    });
 
-      //Scroll to top on router change
-      this.router.events.subscribe((evt) => {
-        if (!(evt instanceof NavigationEnd)) {
-            return;
-        }
-        window.scrollTo(0, 0)
+    // Scroll to top on router change.
+    this.router.events.subscribe(evt => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0);
     });
   }
-
-
-
 }
-
-
-  // ngOnInit() {
-  //   this.route.params.subscribe(myParams => {
-  //     const id = myParams.id;
-
-  //     this.dataservice.getMovie(id).subscribe(data => {
-  //       this.movie = data;
-  //       console.log(data);
-  //     });
-  // });
-
-  
-
-

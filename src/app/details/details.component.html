@@ -1,11 +1,13 @@
-<h1 class="mb-5 mt-4 text-center">{{movie?.name}}</h1>
-<section id="single-movie" class="row justify-content-center">
-  <div class="col-5 order-2 order-md-1 col-md-4 col-lg-3">
-    <img class="img-fluid" src="{{movie?.imageUrl}}" alt="{{movie?.name}}">
-  </div>
-  <div class="col-6 order-1 order md-2 col-md-4">
-    <p class="movie-desc">{{movie?.description}}</p>
-    <h3>{{movie?.price}} ;-</h3>
-    <button class="shiny-btn" *ngIf="movie" (click)="addToCart(movie)">Buy</button>
-  </div>
-</section>
+<div class="container">
+  <h1 class="mb-5 mt-4 text-center">{{movie?.name}}</h1>
+  <section id="single-movie" class="row justify-content-center">
+    <div class="col-5 order-2 order-md-1 col-md-5 col-lg-4 text-right">
+      <img class="img-fluid" src="{{movie?.imageUrl}}" alt="{{movie?.name}}">
+    </div>
+    <div class="col-6 order-1 order md-2 col-md-4">
+      <p class="movie-desc">{{movie?.description}}</p>
+      <h3>{{movie?.price}} ;-</h3>
+      <button class="shiny-btn" *ngIf="movie" (click)="addToCart(movie)">Buy</button>
+    </div>
+  </section>
+</div>

@@ -9,19 +9,32 @@ import { MockDataService } from '../services/mock-data.service';
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
+  movies: IMovie[] = [];
+  categories: any[] = [];
+  constructor(private dataservice: DataService) {}
 
-  movies: IMovie[];
-
-  constructor(private dataservice: DataService) { }
+  addCategory() {
+    // Loop through movies, pair product categoryId with category id.
+    for (let i = 0; i < this.movies.length; i++) {
+      for (let j = 0; j < this.movies[i].productCategory.length; j++) {
+        for (let k = 0; k < this.categories.length; k++) {
+          if (this.movies[i].productCategory[j].categoryId === this.categories[k].id) {
+            this.movies[i].productCategory[j].category = this.categories[k].name + ' ';
+          }
+        }
+      }
+    }
+  }
 
   ngOnInit() {
     this.dataservice.getData().subscribe(data => {
       this.movies = data;
+
+      // Gets API-categories & matches corresponding categories with movies.
+      this.dataservice.getCategory().subscribe(categories => {
+        this.categories = categories;
+        this.addCategory();
+      });
     });
   }
-
-
 }
-
-
-

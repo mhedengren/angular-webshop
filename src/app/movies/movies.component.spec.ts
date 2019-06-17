@@ -4,7 +4,7 @@ import { MoviesComponent } from './movies.component';
 import { MockDataService } from '../services/mock-data.service';
 import { DataService } from '../services/data.service';
 import { DisplayMovieComponent } from '../display-movie/display-movie.component';
-import { RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('MoviesComponent', () => {
   let component: MoviesComponent;
@@ -12,11 +12,15 @@ describe('MoviesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MoviesComponent, DisplayMovieComponent ],
-      imports: [RouterModule.forRoot([])]
+      declarations: [MoviesComponent, DisplayMovieComponent],
+      imports: [RouterTestingModule]
     })
-    .overrideComponent(MoviesComponent, { set: { providers: [ {provide: DataService, useClass: MockDataService}]}})
-    .compileComponents();
+      .overrideComponent(MoviesComponent, {
+        set: {
+          providers: [{ provide: DataService, useClass: MockDataService }]
+        }
+      })
+      .compileComponents();
   }));
 
   beforeEach(() => {
